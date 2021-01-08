@@ -1,0 +1,46 @@
+[
+	{   "role": "President",
+	    "holder":"vaycant",
+		"club":"-"	
+	},
+	{
+		"role": "Secretary",
+		"holder":"Mr D Jago",
+		"club":"S.Ockendon"	
+	},
+	{
+		"role": "Match Secretary",
+		"holder":"Mr R Cornwell",
+		"club":"S.Ockendon"	
+	},
+	{
+		"role": "Assistant Match Secretary",
+		"holder":"Mr T French",
+		"club":"Aveley"	
+	},
+	{
+		"role": "Competition Secretary",
+		"holder":"Mr D Haworth",
+		"club":"Aveley"	
+	},
+	{
+		"role": "Assistant Competition Secretary",
+		"holder":"Mr A Bailey",
+		"club":"Thurrock"	
+	},
+	{
+		"role": "Treasurer",
+		"holder":"Mr R Clark",
+		"club":"Springhouse"	
+	},
+	{
+		"role": "League Secretary",
+		"holder":"Mr A Gray",
+		"club":"Treasurer"	
+	},
+	{
+		"role": "Useless Tosser",
+		"holder":"Mr R Clark",
+		"club":"Springhouse"	
+	}
+]

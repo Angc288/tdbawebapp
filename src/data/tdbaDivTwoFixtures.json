@@ -1,0 +1,166 @@
+{
+  "name": "T&DBA Division Two",
+  "rounds": [
+    {
+      "date": "2020-03-01",
+      "fixtures": [
+        {
+          "team1": 16,
+          "team2": 2,
+          "team1Score": 1,
+          "team2Score": 2
+        },
+        {
+          "team1": 3,
+          "team2": 4,
+          "team1Score": 2,
+          "team2Score": 1
+        },
+        {
+          "team1": 15,
+          "team2": 6,
+          "team1Score": 0,
+          "team2Score": 1
+        }
+      ]
+    },
+    {
+      "date": "2020-03-20",
+      "fixtures": [
+        {
+          "team1": 16,
+          "team2": 3,
+          "team1Score": 1,
+          "team2Score": 2
+        },
+        {
+          "team1": 2,
+          "team2": 15,
+          "team1Score": 3,
+          "team2Score": 2
+        },
+        {
+          "team1": 4,
+          "team2": 6,
+          "team1Score": 2,
+          "team2Score": 1
+        }
+      ]
+    },
+    {
+      "date": "2020-04-09",
+      "fixtures": [
+        {
+          "team1": 16,
+          "team2": 4,
+          "team1Score": 2,
+          "team2Score": 2
+        },
+        {
+          "team1": 3,
+          "team2": 15,
+          "team1Score": 0,
+          "team2Score": 0
+        },
+        {
+          "team1": 2,
+          "team2": 6,
+          "team1Score": 1,
+          "team2Score": 2
+        }
+      ]
+    },
+    {
+      "date": "2020-04-09",
+      "fixtures": [
+        {
+          "team1": 16,
+          "team2": 4,
+          "team1Score": 2,
+          "team2Score": 2
+        },
+        {
+          "team1": 3,
+          "team2": 15,
+          "team1Score": 0,
+          "team2Score": 0
+        },
+        {
+          "team1": 2,
+          "team2": 6,
+          "team1Score": 1,
+          "team2Score": 2
+        }
+      ]
+    },
+    {
+      "date": "2020-04-09",
+      "fixtures": [
+        {
+          "team1": 16,
+          "team2": 4,
+          "team1Score": 2,
+          "team2Score": 2
+        },
+        {
+          "team1": 3,
+          "team2": 15,
+          "team1Score": 0,
+          "team2Score": 0
+        },
+        {
+          "team1": 2,
+          "team2": 6,
+          "team1Score": 1,
+          "team2Score": 2
+        }
+      ]
+    },
+    {
+      "date": "2020-04-09",
+      "fixtures": [
+        {
+          "team1": 16,
+          "team2": 4,
+          "team1Score": 2,
+          "team2Score": 2
+        },
+        {
+          "team1": 3,
+          "team2": 15,
+          "team1Score": 0,
+          "team2Score": 0
+        },
+        {
+          "team1": 2,
+          "team2": 6,
+          "team1Score": 1,
+          "team2Score": 2
+        }
+      ]
+    },
+    {
+      "date": "2020-04-09",
+      "fixtures": [
+        {
+          "team1": 16,
+          "team2": 4,
+          "team1Score": 2,
+          "team2Score": 2
+        },
+        {
+          "team1": 3,
+          "team2": 15,
+          "team1Score": 0,
+          "team2Score": 0
+        },
+        {
+          "team1": 2,
+          "team2": 6,
+          "team1Score": 1,
+          "team2Score": 2
+        }
+      ]
+    }
+  ]
+}

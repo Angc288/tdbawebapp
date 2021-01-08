@@ -1,0 +1,31 @@
+[
+	{   "role": "Chairperson",
+	    "holder":"Mrs  S Clark",
+		"club":"Springhouse"	
+	},
+	{
+		"role": "Secretary",
+		"holder":"Mrs  M Colwell",
+		"club":"Springhouse"	
+	},
+	{
+		"role": "Match Secretary",
+		"holder":"-",
+		"club":"-"	
+	},
+	{
+		"role": "Competition Secretary",
+		"holder":"Mrs P Lowe",
+		"club":"Springhouse"	
+	},
+	{
+		"role": "Treasurer",
+		"holder":"Mrs  D Crowhurst",
+		"club":"Thurrock"	
+	},
+	{
+		"role": "League Secretary",
+		"holder":"Mrs  H Beauchamp",
+		"club":"Orsett"	
+	}
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Aveley"
+  },
+  {
+     "id": 2,
+    "name": "Orsett A"
+  },
+  {
+     "id": 3,
+    "name": "Springhouse A"
+  },
+  {
+     "id": 4,
+    "name": "Thurrock A"
+  },
+  {
+     "id": 5,
+    "name": "Thurrock B"
+  },
+  {
+     "id": 6,
+    "name": "Fobbing & District A"
+  },
+  {
+     "id": 7,
+    "name": "Orsett B"
+  },
+  {
+     "id": 8,
+    "name": "Springhouse B"
+  },
+  {
+     "id": 9,
+    "name": "Thames Sports"
+  },
+  {
+     "id": 10,
+    "name": "United Services"
+  }
+]

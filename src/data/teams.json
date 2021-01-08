@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Aveley A"
+  },
+  {
+     "id": 2,
+    "name": "Grays Town A"
+  },
+  {
+     "id": 3,
+    "name": "Grays Town B"
+  },
+  {
+     "id": 4,
+    "name": "Orsett A"
+  },
+  {
+     "id": 5,
+    "name": "Pitsea"
+  },
+  {
+     "id": 6,
+    "name": "Springhouse A"
+  },
+  {
+     "id": 7,
+    "name": "Thurrock A"
+  },
+  {
+    "id": 8,
+    "name": "Aveley B"
+  },
+  {
+     "id": 9,
+    "name": "Fobbing & District"
+  },
+  {
+     "id": 10,
+    "name": "Ford Sports"
+  },
+  {
+     "id": 11,
+    "name": "GP Murrayfield"
+  },
+   {
+     "id": 12,
+    "name": "Springhouse B"
+  },
+   {
+     "id": 13,
+    "name": "Thames Sports A"
+  },
+   {
+     "id": 14,
+    "name": "Orsett B"
+  },
+  {
+     "id": 15,
+    "name": "South Ockendon"
+  },
+  {
+     "id": 16,
+    "name": "Thames Sports B"
+  },
+  {
+     "id": 17,
+    "name": "Thurrock B"
+  },
+  {
+     "id": 18,
+    "name": "V.C.A"
+  }
+]
