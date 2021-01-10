@@ -12,9 +12,6 @@ class LeagueFixture extends Component {
 
      var teamsMapped = this.state.teams.reduce((a,team) => ({...a, [team.id]: team}),{})
 
-     console.log(someData)
-
-
     	return someData['rounds'].map((round, index) =>  
     			<WeeklyFixture> 
             <h4>{round['date']}</h4>

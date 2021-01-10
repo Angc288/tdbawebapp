@@ -1,0 +1,77 @@
+{
+    "name": "TALBA Division One",
+    "entries": [
+      {
+        "teamName": "1",
+        "rinksPlayed": 3,
+        "rinksWon": 3,
+        "rinksLost": 0,
+        "rinksDrawn": 0,
+        "shotsFor": 8,
+        "shotsAgainst": 8,
+        "shotsDifference": 8,
+        "totalPoints": 9
+        
+      },
+      {
+        "teamName": "2",
+        "rinksPlayed": 3,
+        "rinksWon": 3,
+        "rinksLost": 0,
+        "rinksDrawn": 0,
+        "shotsFor": 8,
+        "shotsAgainst": 8,
+        "shotsDifference": 8,
+        "totalPoints": 9
+        
+      },
+      {
+        "teamName": "3",
+        "rinksPlayed": 3,
+        "rinksWon": 3,
+        "rinksLost": 0,
+        "rinksDrawn": 0,
+        "shotsFor": 8,
+        "shotsAgainst": 8,
+        "shotsDifference": 8,
+        "totalPoints": 9
+        
+      },
+      {
+        "teamName": "4",
+        "rinksPlayed": 3,
+        "rinksWon": 3,
+        "rinksLost": 0,
+        "rinksDrawn": 0,
+        "shotsFor": 8,
+        "shotsAgainst": 8,
+        "shotsDifference": 8,
+        "totalPoints": 9
+        
+      },
+      {
+        "teamName": "5",
+        "rinksPlayed": 3,
+        "rinksWon": 3,
+        "rinksLost": 0,
+        "rinksDrawn": 0,
+        "shotsFor": 8,
+        "shotsAgainst": 8,
+        "shotsDifference": 8,
+        "totalPoints": 9
+        
+      },
+      {
+        "teamName": "6",
+        "rinksPlayed": 3,
+        "rinksWon": 3,
+        "rinksLost": 0,
+        "rinksDrawn": 0,
+        "shotsFor": 8,
+        "shotsAgainst": 8,
+        "shotsDifference": 8,
+        "totalPoints": 9
+        
+      }
+    ]
+  }

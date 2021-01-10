@@ -1,24 +1,17 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {NavDropdown} from 'react-bootstrap';
 
-import {Link} from 'react-router-dom'
-
-class OfficerSubmenu extends React.Component {
+class LinkSubmenu extends React.Component {
   
   render() {
     return (
-      <ul className="nav__submenu">
-        <li className="nav__submenu-item ">
-          <a href="https://www.ecba.co.uk/" target="_blank">Essex Outdoor B.A</a>
-        </li>
-        <li className="nav__submenu-item ">
-          <a href="https://www.bowlsengland.com/" target="_blank">English Outdoor B.A</a>
-        </li>
-        <li className="nav__submenu-item ">
-          <a href="http://ecbagroup9.co.uk/" target="_blank">Group nine Outdoor B.A</a>
-        </li>
-      </ul>
+       <NavDropdown title="Link" id="basic-nav-dropdown">
+            <NavDropdown.Item href="https://www.ecba.co.uk/" target="_blank">Essex Outdoor B.A</NavDropdown.Item>
+            <NavDropdown.Item href="https://www.bowlsengland.com/" target="_blank">English Outdoor B.A</NavDropdown.Item>
+            <NavDropdown.Item href="http://ecbagroup9.co.uk/" target="_blank">Group nine Outdoor B.A</NavDropdown.Item>
+       </NavDropdown>
     )
   }
 }
  
-export default OfficerSubmenu;
+export default LinkSubmenu;

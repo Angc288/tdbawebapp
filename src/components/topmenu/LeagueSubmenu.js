@@ -1,32 +1,15 @@
-import React, {useState} from 'react';
-
-import {Link} from 'react-router-dom'
+import React from 'react';
+import {NavDropdown} from 'react-bootstrap';
 
 const LeagueSubmenu = () => {
     return (
-      <ul className="nav__submenu">
-        <li className="nav__submenu-item ">
-          <Link to="/tdbapremleague">T&DBA Premier League </Link>
-        </li>
-        <li className="nav__submenu-item ">
-          <Link to="/tdbadivoneleague">T&DBA Divison One</Link>
-        </li>
-         <li className="nav__submenu-item ">
-          <Link to="/tdbadivtwoleague">T&DBA Divison Two</Link>
-        </li>
-        <li className="nav__submenu-item ">
-          <Link to="/talbadivoneleague">TALBA Divison One</Link>
-        </li>
-         <li className="nav__submenu-item ">
-          <Link to="/talbadivtwoleague">TALBA Divison Two</Link>
-        </li>
-        <li className="nav__submenu-item ">
-          <Link to="/previousleaguechampions">Previous League Winners</Link>
-        </li>
-        <li className="nav__submenu-item ">
-          <Link to="/ateamplayers">A Team Nominated Players</Link>
-        </li>
-      </ul>
+      <NavDropdown title="League" id="basic-nav-dropdown">
+            <NavDropdown.Item href="/tdbapremleague">T&DBA Premier League</NavDropdown.Item>
+            <NavDropdown.Item href="/tdbadivoneleague">T&DBA Divison One</NavDropdown.Item>
+            <NavDropdown.Item href="/tdbadivtwoleague">T&DBA Divison Two</NavDropdown.Item>
+            <NavDropdown.Item href="/talbadivoneleague">TALBA Divison One</NavDropdown.Item>
+            <NavDropdown.Item href="/talbadivtwoleague">TALBA Divison Two</NavDropdown.Item>
+          </NavDropdown>
     );
   }
 

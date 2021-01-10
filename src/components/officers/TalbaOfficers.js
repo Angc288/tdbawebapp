@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import jsonData1 from "../../data/talbaOfficers.json";
+import jsonData from "../../data/talbaOfficers.json";
 import OfficerTable from "./OfficerTable";
 
 
 class TalbaOfficers extends Component {
 	state = {
-      talbaOfficers: jsonData1
+      talbaOfficers: jsonData
     };
 
 	render(){
