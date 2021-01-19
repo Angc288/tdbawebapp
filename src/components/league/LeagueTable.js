@@ -60,7 +60,11 @@ function ReactLeagueTable({data})  {
     
 
    return (  
-        <MaUTable {...getTableProps()} style={{ border: 'solid 1px blue' }}>
+        <MaUTable {...getTableProps()} 
+        style={{ 
+          border: 'solid 1px blue',
+          marginBottom: 100
+        }}>
             <TableHead>
               {headerGroups.map(headerGroup => (
                 <TableRow {...headerGroup.getHeaderGroupProps()}>
@@ -71,7 +75,8 @@ function ReactLeagueTable({data})  {
                         color: 'white',
                         fontWeight: 'bold',
                         fontSize: '20',
-                        padding: '3px 15px 3px 15px'
+                        padding: '3px 15px 3px 15px',
+                        marginBottom: 40
                       }}>
                       {column.render('Header')}
                     </th>
@@ -91,8 +96,7 @@ function ReactLeagueTable({data})  {
                           style={{
                             padding: '5px',
                             border: 'solid 1px gray',
-                            background: '#E8E8E8',
-                            
+                            background: '#E8E8E8'
                           }}
                         >
                           {cell.render('Cell')}

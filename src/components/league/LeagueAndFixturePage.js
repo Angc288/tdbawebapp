@@ -1,14 +1,18 @@
+import { green } from '@material-ui/core/colors';
 import React from 'react';
-import LeagueFixture from './LeagueFixture'
 import ReactLeagueTable from './LeagueTable'
+import Match from './Match'
+
 
 function LeagueAndFixturePage({leagueData, fixtureData})  {  
 
 	return( 
 		<div>
 			<h2>{leagueData['name']}</h2>
-		   <ReactLeagueTable data={leagueData['entries']}/>
-		   <LeagueFixture someData={fixtureData}/>
+		    <ReactLeagueTable data={leagueData['entries']}/>
+			<div>
+		    	<Match fixtures={fixtureData}/>
+			</div>
 	   </div>	
 	 )
 

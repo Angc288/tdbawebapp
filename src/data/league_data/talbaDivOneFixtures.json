@@ -5,20 +5,20 @@
       "date": "2020-03-01",
       "fixtures": [
         {
-          "team1": 1,
-          "team2": 2,
+          "team1": "Test",
+          "team2": "Test A",
           "team1Score": 0,
           "team2Score": 1
         },
         {
-          "team1": 3,
-          "team2": 4,
+          "team1": "Test",
+          "team2": "Test A",
           "team1Score": 2,
           "team2Score": 1
         },
         {
-          "team1": 5,
-          "team2": 7,
+          "team1": "Test",
+          "team2": "Test A",
           "team1Score": 0,
           "team2Score": 1
         }
@@ -28,20 +28,20 @@
       "date": "2020-03-20",
       "fixtures": [
         {
-          "team1": 1,
-          "team2": 3,
+          "team1": "Test",
+          "team2": "Test A",
           "team1Score": 4,
           "team2Score": 1
         },
         {
-          "team1": 2,
-          "team2": 5,
+          "team1": "Test",
+          "team2": "Test A",
           "team1Score": 3,
           "team2Score": 2
         },
         {
-          "team1": 4,
-          "team2": 7,
+          "team1": "Test",
+          "team2": "Test A",
           "team1Score": 2,
           "team2Score": 2
         }
@@ -51,20 +51,20 @@
       "date": "2020-04-09",
       "fixtures": [
         {
-          "team1": 1,
-          "team2": 4,
+          "team1": "Test",
+          "team2": "Test A",
           "team1Score": 0,
           "team2Score": 2
         },
         {
-          "team1": 3,
-          "team2": 5,
+          "team1": "Test",
+          "team2": "Test A",
           "team1Score": 1,
           "team2Score": 1
         },
         {
-          "team1": 2,
-          "team2": 7,
+          "team1": "Test",
+          "team2": "Test A",
           "team1Score": 4,
           "team2Score": 2
         }
@@ -74,22 +74,16 @@
       "date": "2020-04-20",
       "fixtures": [
         {
-          "team1": 1,
-          "team2": 4,
-          "team1Score": 0,
-          "team2Score": 2
+          "team1": "Test",
+          "team2": "Test A"
         },
         {
-          "team1": 3,
-          "team2": 5,
-          "team1Score": 2,
-          "team2Score": 1
+          "team1": "Test",
+          "team2": "Test A"
         },
         {
-          "team1": 2,
-          "team2": 7,
-          "team1Score": 1,
-          "team2Score": 2
+          "team1": "Test",
+          "team2": "Test A"
         }
       ]
     }

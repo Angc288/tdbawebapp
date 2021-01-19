@@ -2,7 +2,7 @@
     "name": "TALBA Division One",
     "entries": [
       {
-        "teamName": "1",
+        "teamName": "Test",
         "rinksPlayed": 3,
         "rinksWon": 3,
         "rinksLost": 0,
@@ -14,7 +14,7 @@
         
       },
       {
-        "teamName": "2",
+        "teamName": "Test",
         "rinksPlayed": 3,
         "rinksWon": 3,
         "rinksLost": 0,
@@ -26,7 +26,7 @@
         
       },
       {
-        "teamName": "3",
+        "teamName": "Test",
         "rinksPlayed": 3,
         "rinksWon": 3,
         "rinksLost": 0,
@@ -38,7 +38,7 @@
         
       },
       {
-        "teamName": "4",
+        "teamName": "Test",
         "rinksPlayed": 3,
         "rinksWon": 3,
         "rinksLost": 0,
@@ -50,7 +50,7 @@
         
       },
       {
-        "teamName": "5",
+        "teamName": "Test",
         "rinksPlayed": 3,
         "rinksWon": 3,
         "rinksLost": 0,
@@ -62,7 +62,7 @@
         
       },
       {
-        "teamName": "6",
+        "teamName": "Test",
         "rinksPlayed": 3,
         "rinksWon": 3,
         "rinksLost": 0,
