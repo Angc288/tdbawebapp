@@ -9,10 +9,13 @@ class TalbaOfficers extends Component {
     };
 
 	render(){
+
+		console.log(this.state.talbaOfficers);
+
 		return( 
 			<div>
 				<h2>Talba Officers</h2>
-				<OfficerTable officers={this.state.talbaOfficers}/>
+				<OfficerTable officers={this.state.talbaOfficers} loaded={true}/>
 			</div>
 		)
 	}

@@ -9,7 +9,10 @@ import TableRow from "@material-ui/core/TableRow";
 
 function ReactLeagueTable({data})  {  
   
-console.log(data)
+  if(Array.isArray(data)){
+    console.log("its an array");
+  }
+
 
   const columns = React.useMemo(
     () => [

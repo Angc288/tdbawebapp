@@ -6,6 +6,9 @@ import Match from './Match'
 
 function LeagueAndFixturePage({leagueData, fixtureData})  {  
 
+	console.log(leagueData);
+	console.log(fixtureData);
+
 	return( 
 		<div>
 			<h2>{leagueData['name']}</h2>

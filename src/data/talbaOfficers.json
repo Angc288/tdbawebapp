@@ -2,35 +2,5 @@
 	{   "role": "Chairperson",
 	    "holder":"Mrs  S Clark",
 		"club":"Springhouse"	
-	},
-	{
-		"role": "Secretary",
-		"holder":"Mrs  M Colwell",
-		"club":"Springhouse",
-		"organisation": "TALBA"	
-	},
-	{
-		"role": "Match Secretary",
-		"holder":"-",
-		"club":"-",
-		"organisation": "TALBA"	
-	},
-	{
-		"role": "Competition Secretary",
-		"holder":"Mrs P Lowe",
-		"club":"Springhouse",
-		"organisation": "TALBA"	
-	},
-	{
-		"role": "Treasurer",
-		"holder":"Mrs  D Crowhurst",
-		"club":"Thurrock",
-		"organisation": "TALBA"	
-	},
-	{
-		"role": "League Secretary",
-		"holder":"Mrs  H Beauchamp",
-		"club":"Orsett"	,
-		"organisation": "TALBA"
 	}
 ]
