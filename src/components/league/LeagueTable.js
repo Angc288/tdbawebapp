@@ -9,6 +9,8 @@ import TableRow from "@material-ui/core/TableRow";
 
 function ReactLeagueTable({data})  {  
   
+console.log(data)
+
   const columns = React.useMemo(
     () => [
         {

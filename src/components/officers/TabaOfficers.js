@@ -1,23 +1,38 @@
-import React, {Component} from 'react';
-import jsonData from "../../data/tdbaOfficers.json";
+import React, {useState} from 'react';
 import OfficerTable from "./OfficerTable";
 
+function TadbaOfficers() {
+	const [tadbaOffers, setTadbaOffers] = useState([])
+	const [officersLoaded, setLoaded] = useState(false)
 
-class TabaOfficers extends Component {
-	state = {
-      tabaOfficers: jsonData
-    };
+	console.log("in tabda officers")
+
+	React.useEffect(() => {
+		fetch('https://korkszmntc.execute-api.eu-west-2.amazonaws.com/PRD/officers?organisation=TALBA')
+		  .then(results => results.json())
+		  .then(data => {
+			setTadbaOffers(data);
+			setLoaded(true);
+		  });
+	  }, [setLoaded]);
 
 
-	render(){
-		return( 
-			<div>
-				<h2>Taba Officers</h2>
-				<OfficerTable someData={this.state.tabaOfficers}/>
-			</div>
+
+	  if (officersLoaded === false) {
+		console.log(officersLoaded)
+		return (
+		  <div>hello</div>
 		)
-	}
+	  }
+
+
+	  return( 
+		<div>
+			<h2>Taba Officers</h2>
+			<OfficerTable officers={tadbaOffers} loading={officersLoaded}/>
+		</div>
+	)
 }
 
 
-export default TabaOfficers;
+export default TadbaOfficers;

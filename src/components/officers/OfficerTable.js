@@ -7,10 +7,12 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 
-function OfficerTable (data2) {
+function OfficerTable (props) {
 
-  const data = data2['someData'];
-
+//const properties = (props) => {...}
+console.log(props);
+var officers = props['officers'];
+console.log(officers);
 
   const columns = React.useMemo(
     () => [
@@ -29,15 +31,24 @@ function OfficerTable (data2) {
       ]
     )
 
-  const {
-        getTableProps,
-        getTableBodyProps,
-        headerGroups,
-        rows,
-        prepareRow,
-    } = useTable({ columns, data})
+    console.log(officers.array);
+
+officers.forEach(element => {
+  console.log(element)
+});
+
+   
+console.log(columns);
+
+    const {
+      getTableProps,
+      getTableBodyProps,
+      headerGroups,
+      rows,
+      prepareRow,
+  } = useTable({ columns, officers})
     
-    return (  
+    return (
       <MaUTable {...getTableProps()} style={{ border: 'solid 1px blue' }}>
           <TableHead>
             {headerGroups.map(headerGroup => (

@@ -12,7 +12,7 @@ class TalbaOfficers extends Component {
 		return( 
 			<div>
 				<h2>Talba Officers</h2>
-				<OfficerTable someData={this.state.talbaOfficers}/>
+				<OfficerTable officers={this.state.talbaOfficers}/>
 			</div>
 		)
 	}
