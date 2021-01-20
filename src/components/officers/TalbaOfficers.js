@@ -1,25 +1,31 @@
-import React, {Component} from 'react';
-import jsonData from "../../data/talbaOfficers.json";
+import React, {useState} from 'react';
 import OfficerTable from "./OfficerTable";
 
+function TalbaOfficers() {
+	const [talbaOffers, setTalbaOffers] = useState()
+	const [officersLoaded, setLoaded] = useState(false)
 
-class TalbaOfficers extends Component {
-	state = {
-      talbaOfficers: jsonData
-    };
+	React.useEffect(() => {
+		fetch('https://korkszmntc.execute-api.eu-west-2.amazonaws.com/PRD/officers?organisation=TALBA')
+		  .then(results => results.json())
+		  .then(data => {
+			setTalbaOffers(data);
+			setLoaded(true);
+		  });
+	  }, [setLoaded]);
 
-	render(){
-
-		console.log(this.state.talbaOfficers);
-
-		return( 
-			<div>
-				<h2>Talba Officers</h2>
-				<OfficerTable officers={this.state.talbaOfficers} loaded={true}/>
-			</div>
+	  if (officersLoaded === false) {
+		return (
+		  <div>hello</div>
 		)
-	}
-}
+	  }
 
+	  return ( 
+		<div>
+			<h2>TALBA Officers</h2>
+			<OfficerTable officers={talbaOffers}/>
+		</div>
+	)
+}
 
 export default TalbaOfficers;

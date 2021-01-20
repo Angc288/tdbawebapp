@@ -7,15 +7,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 
-function OfficerTable ({officers, loaded}) {
-
-//const properties = (props) => {...}
-console.log(officers);
-console.log(loaded);
-
-if(Array.isArray(officers)){
-  console.log("its an array");
-}
+function OfficerTable ({officers}) {
 
   const columns = [
         {
@@ -32,18 +24,13 @@ if(Array.isArray(officers)){
         }
       ]
     
-
-  officers.forEach(element => {
-    console.log(element)
-  });
-    
   const {
         getTableProps,
         getTableBodyProps,
         headerGroups,
         rows,
         prepareRow,
-  } = useTable({ columns, officers})
+  } = useTable({ columns, data:officers})
       
   return (
         <MaUTable {...getTableProps()} style={{ border: 'solid 1px blue' }}>
