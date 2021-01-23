@@ -7,8 +7,6 @@ function TadbaOfficers() {
 
 	React.useEffect(() => {
 		if (!officersLoaded) {
-			console.log("in the use effect");
-
 			fetch('https://korkszmntc.execute-api.eu-west-2.amazonaws.com/PRD/officers?organisation=TADBA')
 			.then(results => results.json())
 			.then(data => {
@@ -18,7 +16,6 @@ function TadbaOfficers() {
 		}
 	  }, [officersLoaded]);
 	
-
 	  return ( 
 		officersLoaded ?
 		(<div>
