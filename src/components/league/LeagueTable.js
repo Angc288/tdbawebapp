@@ -9,48 +9,43 @@ import TableRow from "@material-ui/core/TableRow";
 
 function ReactLeagueTable({data})  {  
   
-  if(Array.isArray(data)){
-    console.log("its an array");
-  }
-
-
   const columns = React.useMemo(
     () => [
         {
           Header: 'Team',
-          accessor: 'teamName', // accessor is the "key" in the data
+          accessor: 'name', // accessor is the "key" in the data
         },
         {
           Header: 'Played',
-          accessor: 'rinksPlayed',
+          accessor: 'played',
         },
         {
           Header: 'Won',
-          accessor: 'rinksWon', // accessor is the "key" in the data
+          accessor: 'won', // accessor is the "key" in the data
         },
         {
           Header: 'Lost',
-          accessor: 'rinksLost',
+          accessor: 'lost',
         },
         {
           Header: 'Drawn',
-          accessor: 'rinksDrawn', // accessor is the "key" in the data
+          accessor: 'drawn', // accessor is the "key" in the data
         },
         {
           Header: 'For',
-          accessor: 'shotsFor',
+          accessor: 'for',
         },
         {
           Header: 'Against',
-          accessor: 'shotsAgainst', // accessor is the "key" in the data
+          accessor: 'against', // accessor is the "key" in the data
         },
         {
           Header: 'SD',
-          accessor: 'shotsDifference',
+          accessor: 'shotDifference',
         },
         {
           Header: 'Points',
-          accessor: 'totalPoints',
+          accessor: 'points',
         }
       ]
     )

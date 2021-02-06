@@ -3,7 +3,7 @@ import React from 'react';
 function MatchInfo({fixtures}) {
 
     return(
-        fixtures['rounds'].map((round, roundIndex) =>
+        fixtures.map((round, roundIndex) =>
             <div style={{
                 marginBottom: 30,
             }}>
