@@ -10,7 +10,6 @@ function FriendlyFixturesWrapper({ fixtureGroupIdProps, fixtureGroupNameProps })
     const [fixtureData, setFixtureData] = useState([])
     const [fixtureGroupName] = useState(fixtureGroupNameProps)
     const [fixtureGroupId] = useState(fixtureGroupIdProps)
-    const [leagueLoading, setLeagueLoading] = useState(false)
     const [fixtureLoaded, setFixtureLoaded] = useState(false)
 
     // React.useEffect(() => {
@@ -42,11 +41,11 @@ function FriendlyFixturesWrapper({ fixtureGroupIdProps, fixtureGroupNameProps })
 
     React.useEffect(() => {
         if (!fixtureLoaded) {
-            if (fixtureGroupId == 'Indoor_Fixtures_2019_2020') {
+            if (fixtureGroupId === 'Indoor_Fixtures_2019_2020') {
                 setFixtureData(indoorFixtures)
-            } else if (fixtureGroupId == 'Outdoor_Fixtures_2020') {
+            } else if (fixtureGroupId === 'Outdoor_Fixtures_2020') {
                 setFixtureData(outdoorFixtures)
-            } else if (fixtureGroupId == 'TALBA_Outdoor_Fixtures_2019') {
+            } else if (fixtureGroupId ==='TALBA_Outdoor_Fixtures_2019') {
                 setFixtureData(ladiesFixtures)
             }
             setFixtureLoaded(true)

@@ -12,29 +12,31 @@ function FixtureBlock({ rounds }) {
         rounds.map((round, roundIndex) =>
             <div style={{
                 marginBottom: 30,
-            }}>
+            }} key={roundIndex}>
                 <table
                     style={{
                         width: '100%',
                         height: 200,
                         borderCollapse: 'collapse'
-                    }}>
-                    <tbody>
-                        <tr>
+                    }}
+                    key={roundIndex}>
+                    <tbody key={roundIndex}>
+                        <tr key={roundIndex}>
                             <h3 style={{
                                 textAlign: 'left',
                                 paddingLeft: 60
                             }}
+                            key={roundIndex}
                             >{round['date']}</h3>
                         </tr>
                     </tbody>
                     {round['fixtures'].map((fixture, fixtureIndex) =>
-                        <tbody
+                        <tbody key={fixtureIndex}
                             style={{
                                 width: 100,
                                 borderBottom: 'solid 20px white'
                             }}>
-                            <tr
+                            <tr key={fixtureIndex}
                                 style={{
                                     background: '#E8E8E8'
                                 }}>
