@@ -1,51 +1,51 @@
 import React from 'react';
 
-import { useTable, useSortBy } from 'react-table'
+import { useTable } from 'react-table'
 import MaUTable from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 
-function LeagueTable({ data }) {
+function FriendlyFixturesTable({ data }) {
 
   const columns = React.useMemo(
     () => [
       {
-        Header: 'Team',
-        accessor: 'name', // accessor is the "key" in the data
+        Header: 'Match Id',
+        accessor: 'matchId', // accessor is the "key" in the data
       },
       {
-        Header: 'Played',
-        accessor: 'played',
+        Header: 'Date',
+        accessor: 'date',
       },
       {
-        Header: 'Won',
-        accessor: 'won', // accessor is the "key" in the data
+        Header: 'Club',
+        accessor: 'club', // accessor is the "key" in the data
       },
       {
-        Header: 'Lost',
-        accessor: 'lost',
+        Header: 'Venue',
+        accessor: 'venue',
       },
       {
-        Header: 'Drawn',
-        accessor: 'drawn', // accessor is the "key" in the data
+        Header: 'Phone',
+        accessor: 'phone', // accessor is the "key" in the data
       },
       {
-        Header: 'For',
-        accessor: 'for',
+        Header: 'Time',
+        accessor: 'time',
       },
       {
-        Header: 'Against',
-        accessor: 'against', // accessor is the "key" in the data
+        Header: 'Rinks',
+        accessor: 'rinks', // accessor is the "key" in the data
       },
       {
-        Header: 'SD',
-        accessor: 'shotDifference',
+        Header: 'Dress',
+        accessor: 'dress',
       },
       {
-        Header: 'Points',
-        accessor: 'points',
+        Header: 'Food',
+        accessor: 'food',
       }
     ],
     []
@@ -63,12 +63,10 @@ function LeagueTable({ data }) {
       data,
       initialState: {
         sortBy: [
-          { id: 'points', desc: true },
-          { id: 'shotDifference', desc: true }
+          { id: 'matchId', desc: true }
         ]
       }
-    },
-    useSortBy
+    }
   )
 
 
@@ -82,7 +80,7 @@ function LeagueTable({ data }) {
         {headerGroups.map(headerGroup => (
           <TableRow {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
-              <th {...column.getHeaderProps(column.getSortByToggleProps())}
+              <th {...column.getHeaderProps()}
                 style={{
                   background: '#360037',
                   color: 'white',
@@ -124,4 +122,4 @@ function LeagueTable({ data }) {
   )
 }
 
-export default LeagueTable;
+export default FriendlyFixturesTable;

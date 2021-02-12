@@ -1,52 +1,34 @@
 [
 	{
-		"matchId": "ID1",
-		"date": "Sat 05 Oct",
-		"opponent": "Dartford Stone Lodge IBC",
-		"dress":"W",
-		"noOfRinks":"6 Mixed Meal",
-		"home":false,
-		"venue":"Cotton Lane Dartford",
-		"time":"14:00"
+	  "date": "5th Oct",
+	  "venue": "Cotton lane Dartford KentDA2 6PD",
+	  "phone": "0132 274111",
+	  "rinks": "6 Mixed",
+	  "matchId": "ID 01",
+	  "club": "Dartford Stone Lodge",
+	  "time": "2.00 PM",
+	  "food": "Meal"
 	},
 	{
-		"matchId": "ID2",
-		"date": "Sat 05 Oct",
-		"opponent": "Dartford Stone Lodge IBC",
-		"dress":"W",
-		"noOfRinks":"6 Mixed Meal",
-		"home":false,
-		"venue":"Cotton Lane Dartford",
-		"time":"14:00"
+	  "date": "12th Oct",
+	  "venue": "Valley Road Clacton on Sea CO15 6NA",
+	  "phone": "01322 863554",
+	  "rinks": "7 Mixed",
+	  "matchId": "ID 02",
+	  "club": "Clacton on Sea IBC",
+	  "time": "2.30 PM",
+	  "dress": "White",
+	  "food": "Meal"
 	},
 	{
-		"matchId": "ID3",
-		"date": "Sat 05 Oct",
-		"opponent": "Dartford Stone Lodge IBC",
-		"dress":"W",
-		"noOfRinks":"6 Mixed Meal",
-		"home":false,
-		"venue":"Cotton Lane Dartford",
-		"time":"14:00"
-	},
-	{
-		"matchId": "ID4",
-		"date": "Sat 05 Oct",
-		"opponent": "Dartford Stone Lodge IBC",
-		"dress":"W",
-		"noOfRinks":"6 Mixed Meal",
-		"home":false,
-		"venue":"Cotton Lane Dartford",
-		"time":"14:00"
-	},
-	{
-		"matchId": "ID5",
-		"date": "Sat 05 Oct",
-		"opponent": "Dartford Stone Lodge IBC",
-		"dress":"W",
-		"noOfRinks":"6 Mixed Meal",
-		"home":false,
-		"venue":"Cotton Lane Dartford",
-		"time":"14:00"
+	  "date": "20th Oct",
+	  "venue": "Harrow lodge Park Hornchurcx  RM11 1JU",
+	  "phone": "01797 863554",
+	  "rinks": "6 Mens 3 Ladies",
+	  "matchId": "ID 03",
+	  "club": "Havering IBC",
+	  "time": "2.30 PM",
+	  "dress": "White",
+	  "food": "Meal"
 	}
-]
+  ]

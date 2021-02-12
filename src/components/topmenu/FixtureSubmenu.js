@@ -1,17 +1,23 @@
-import React from 'react';
-import {NavDropdown} from 'react-bootstrap';
+import React, { useState } from 'react';
+import { NavDropdown } from 'react-bootstrap';
 
-const FixtureSubmenu = () => {
-    return (
-            <NavDropdown title="Fixture" id="basic-nav-dropdown">
-            <NavDropdown.Item href="/indoorfixtures">Indoor Fixtures</NavDropdown.Item>
-            <NavDropdown.Item href="/outdoorfixtures">Outdoor Fixtures</NavDropdown.Item>
-            <NavDropdown.Item href="/ladiesfixtures">Ladies Fixtures</NavDropdown.Item>
-            </NavDropdown>
-             )
-  }
+function FixtureSubmenu({ fixtureGroupsProps }) {
 
- 
+  const [fixtureGroups, setFixtureGroups] = useState(fixtureGroupsProps)
+
+  return (
+    <NavDropdown title="Fixture" id="basic-nav-dropdown">
+      {fixtureGroups.map((fixtureGroup, index) => {
+        if (fixtureGroup.active) {
+          return <NavDropdown.Item href={"/friendlyfixtures/" + fixtureGroup.id}>{fixtureGroup.name}</NavDropdown.Item>
+        }
+
+      })}
+    </NavDropdown>
+  )
+}
+
+
 export default FixtureSubmenu;
 
 

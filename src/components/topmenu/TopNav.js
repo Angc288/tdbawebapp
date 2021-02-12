@@ -2,13 +2,13 @@ import React from 'react';
 import TopNavBar from "./TopNavBar"
 
 
-const TopNav = () => {
-		  return ( 
-		  	<header>
-			    <TopNavBar/>
-			</header>
-	    );
-	
+function TopNav({ fixtureGroups }) {
+	return (
+		<header>
+			<TopNavBar fixtureGroups={fixtureGroups} />
+		</header>
+	);
+
 }
 
 
