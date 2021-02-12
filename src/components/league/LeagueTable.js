@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { useTable } from 'react-table'
+import { useTable, useSortBy } from 'react-table'
 import MaUTable from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 
-function ReactLeagueTable({data})  {  
+function LeagueTable({data})  {  
   
   const columns = React.useMemo(
     () => [
@@ -47,7 +47,8 @@ function ReactLeagueTable({data})  {
           Header: 'Points',
           accessor: 'points',
         }
-      ]
+      ],
+      []
     )
 
   const {
@@ -56,7 +57,18 @@ function ReactLeagueTable({data})  {
         headerGroups,
         rows,
         prepareRow,
-    } = useTable({ columns, data })
+    } = useTable(
+        {columns,
+         data,
+         initialState:{ 
+            sortBy:[
+              {id:'points', desc: true}, 
+              {id:'shotDifference', desc: true}
+            ]
+          } 
+        },
+        useSortBy
+      )
     
 
    return (  
@@ -69,7 +81,7 @@ function ReactLeagueTable({data})  {
               {headerGroups.map(headerGroup => (
                 <TableRow {...headerGroup.getHeaderGroupProps()}>
                   {headerGroup.headers.map(column => (
-                    <th {...column.getHeaderProps()}
+                    <th {...column.getHeaderProps(column.getSortByToggleProps())}
                       style={{
                         background: '#360037',
                         color: 'white',
@@ -111,4 +123,4 @@ function ReactLeagueTable({data})  {
         )
 }  
 
-export default ReactLeagueTable;
+export default LeagueTable;

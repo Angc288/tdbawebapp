@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import ReactLeagueTable from './LeagueTable'
-import Match from './Match'
+import LeagueTable from './LeagueTable'
+import FixtureBlock from './FixtureBlock'
 
 
 function LeagueAndFixturePage({divisionId, leagueNameProp})  {  
@@ -44,8 +44,8 @@ function LeagueAndFixturePage({divisionId, leagueNameProp})  {
 			<h2>{leagueName}</h2>
 			{leagueData && fixtureData ?
 				<div>
-				<ReactLeagueTable data={leagueData}/>
-				<Match fixtures={fixtureData}/>
+				<LeagueTable data={leagueData}/>
+				<FixtureBlock rounds={fixtureData}/>
 				</div>
 				:
 				<div> Loading</div>

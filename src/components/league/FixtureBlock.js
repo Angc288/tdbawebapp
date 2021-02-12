@@ -1,9 +1,16 @@
 import React from 'react';
 
-function MatchInfo({fixtures}) {
+function FixtureBlock({rounds}) {
+
+    rounds.sort((a,b) =>  a.id - b.id)
+
+    rounds.forEach(round => {
+        round.fixtures.sort((a,b) => a.id.localeCompare(b.id))
+    });
+
 
     return(
-        fixtures.map((round, roundIndex) =>
+        rounds.map((round, roundIndex) =>
             <div style={{
                 marginBottom: 30,
             }}>
@@ -57,4 +64,4 @@ function MatchInfo({fixtures}) {
     )
 }
 
-export default MatchInfo;
+export default FixtureBlock;

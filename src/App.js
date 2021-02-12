@@ -27,9 +27,9 @@ function App() {
                <Route path="/talbaofficers"> <Officers organisation={'TALBA'}/></Route>
                <Route path="/tdbapremleague"> <LeagueAndFixturePage divisionId={'T_DBA_Premier_League2020'} leagueNameProp={'T&DBA Premier League'}/></Route>
                <Route path="/tdbadivoneleague"><LeagueAndFixturePage divisionId={'T_DBA_Division_One2020'} leagueNameProp={'T&DBA Division One'}/></Route>
-               <Route path="/tdbadivtwoleague"><LeagueAndFixturePage divisionId={'T_DBA_Division_One2020'} leagueNameProp={'T&DBA Division Two'}/></Route>
-               <Route path="/talbadivoneleague"><LeagueAndFixturePage divisionId={'T_DBA_Division_One2020'} leagueNameProp={'TALBA Division One'}/></Route>
-               <Route path="/talbadivtwoleague"><LeagueAndFixturePage divisionId={'T_DBA_Division_One2020'} leagueNameProp={'TALBA Division Two'}/></Route>
+               <Route path="/tdbadivtwoleague"><LeagueAndFixturePage divisionId={'T_DBA_Division_Two2020'} leagueNameProp={'T&DBA Division Two'}/></Route>
+               <Route path="/talbadivoneleague"><LeagueAndFixturePage divisionId={'TALBA_Division_One2020'} leagueNameProp={'TALBA Division One'}/></Route>
+               <Route path="/talbadivtwoleague"><LeagueAndFixturePage divisionId={'TALBA_Division_Two2020'} leagueNameProp={'TALBA Division Two'}/></Route>
                <Route path="/outdoorfixtures" component={OutdoorFixtures}/>
                <Route path="/indoorfixtures" component={IndoorFixtures}/>
                <Route path="/ladiesfixtures" component={LadiesFixtures}/>
