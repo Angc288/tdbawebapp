@@ -21,8 +21,9 @@ function App() {
     <Router>
       <div className="App">
         <TopNav fixtureGroups={friendlyFixtureGroups} />
-        <Container>
+        <div>
           <Route exact path="/" component={Home} />
+          <Container>
           <Route path="/tabaofficers"><Officers organisation={'TADBA'} /></Route>
           <Route path="/talbaofficers"> <Officers organisation={'TALBA'} /></Route>
           <Route path="/tdbapremleague"> <LeagueAndFixturePage divisionId={'T_DBA_Premier_League2020'} leagueNameProp={'T&DBA Premier League'} /></Route>
@@ -36,7 +37,8 @@ function App() {
               return <Route path={path}><FriendlyFixturesWrapper fixtureGroupIdProps={fixtureGroup.id} fixtureGroupNameProps={fixtureGroup.name} /></Route>
             }
           })}
-        </Container>
+          </Container>
+        </div>
       </div>
     </Router>
   );

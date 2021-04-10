@@ -17,7 +17,7 @@ function LeagueAndFixturePage({ divisionId, leagueNameProp }) {
 
 		if (!leagueData && !leagueLoading) {
 			setLeagueLoading(true)
-			fetch('https://korkszmntc.execute-api.eu-west-2.amazonaws.com/PRD/leaguetables/' + divisionId)
+			fetch('https://tjrlh6izkj.execute-api.eu-west-2.amazonaws.com/production/leaguetables/' + divisionId)
 				.then(results => results.json())
 				.then(data => {
 					setLeagueLoading(false);
@@ -27,7 +27,7 @@ function LeagueAndFixturePage({ divisionId, leagueNameProp }) {
 
 		if (!fixtureData && !fixtureLoading) {
 			setFixtureLoading(true)
-			fetch('https://korkszmntc.execute-api.eu-west-2.amazonaws.com/PRD/division/' + divisionId + '/fixtures')
+			fetch('https://tjrlh6izkj.execute-api.eu-west-2.amazonaws.com/production/leaguefixtures?divisionid=' + divisionId)
 				.then(results => results.json())
 				.then(data => {
 					setFixtureLoading(false)
