@@ -7,7 +7,7 @@ function TadbaOfficers({ organisation }) {
 
 	React.useEffect(() => {
 		if (!officersLoaded) {
-			fetch('https://korkszmntc.execute-api.eu-west-2.amazonaws.com/PRD/officers?organisation=' + organisation)
+			fetch('https://tjrlh6izkj.execute-api.eu-west-2.amazonaws.com/PRD/officers?organisation=' + organisation)
 				.then(results => results.json())
 				.then(data => {
 					setOfficers(data);
