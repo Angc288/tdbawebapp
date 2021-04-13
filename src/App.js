@@ -7,7 +7,7 @@ import Officers from './components/officers/Officers';
 
 import LeagueAndFixturePage from './components/league/LeagueAndFixturePage';
 import FriendlyFixturesWrapper from './components/fixtures/FriendlyFixturesWrapper';
-
+import LeagueSelection from './components/league/LeagueSelection';
 import friendlyFixtureGroups from "./data/friendlyFixtures_groups.json"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -25,11 +25,8 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/tabaofficers"><Officers organisation={'TADBA'} /></Route>
           <Route path="/talbaofficers"> <Officers organisation={'TALBA'} /></Route>
-          <Route path="/tdbapremleague"> <LeagueAndFixturePage divisionId={'T_DBA_Premier_League2020'} leagueNameProp={'T&DBA Premier League'} /></Route>
-          <Route path="/tdbadivoneleague"><LeagueAndFixturePage divisionId={'T_DBA_Division_One2020'} leagueNameProp={'T&DBA Division One'} /></Route>
-          <Route path="/tdbadivtwoleague"><LeagueAndFixturePage divisionId={'T_DBA_Division_Two2020'} leagueNameProp={'T&DBA Division Two'} /></Route>
-          <Route path="/talbadivoneleague"><LeagueAndFixturePage divisionId={'TALBA_Division_One2020'} leagueNameProp={'TALBA Division One'} /></Route>
-          <Route path="/talbadivtwoleague"><LeagueAndFixturePage divisionId={'TALBA_Division_Two2020'} leagueNameProp={'TALBA Division Two'} /></Route>
+          <Route path="/leagueselection"> <LeagueSelection/></Route>
+          <Route path="/leagueandfixtures"> <LeagueAndFixturePage/></Route>
           {friendlyFixtureGroups.map((fixtureGroup, index) => {
             if (fixtureGroup.active) {
               const path = "/friendlyfixtures/" + fixtureGroup.id

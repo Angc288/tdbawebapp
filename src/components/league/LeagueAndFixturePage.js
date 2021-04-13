@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
 import LeagueTable from './LeagueTable'
 import FixtureBlock from './FixtureBlock'
+import {useLocation} from "react-router-dom";
 
-
-function LeagueAndFixturePage({ divisionId, leagueNameProp }) {
+const LeagueAndFixturePage = () => {
 
 	const [fixtureData, setFixtureData] = useState()
 	const [leagueData, setLeagueData] = useState()
-	const [leagueName] = useState(leagueNameProp)
+	const [leagueName, setLeagueName] = useState()
 	const [leagueLoading, setLeagueLoading] = useState(false)
 	const [fixtureLoading, setFixtureLoading] = useState(false)
-
-
+	
+	const location = useLocation()
 
 	React.useEffect(() => {
+		const params = new URLSearchParams(location.search)
+
+		setLeagueName(params.get("divisionId"))
 
 		if (!leagueData && !leagueLoading) {
 			setLeagueLoading(true)
-			fetch('https://tjrlh6izkj.execute-api.eu-west-2.amazonaws.com/PRD/leaguetables/' + divisionId)
+			fetch('https://tjrlh6izkj.execute-api.eu-west-2.amazonaws.com/production/leaguetables/' + params.get("divisionId"))
 				.then(results => results.json())
 				.then(data => {
 					setLeagueLoading(false);
@@ -27,16 +30,13 @@ function LeagueAndFixturePage({ divisionId, leagueNameProp }) {
 
 		if (!fixtureData && !fixtureLoading) {
 			setFixtureLoading(true)
-			fetch('https://tjrlh6izkj.execute-api.eu-west-2.amazonaws.com/PRD/division/' + divisionId + '/fixtures')
+			fetch('https://tjrlh6izkj.execute-api.eu-west-2.amazonaws.com/production/leaguefixtures?divisionid=' + params.get("divisionId"))
 				.then(results => results.json())
 				.then(data => {
 					setFixtureLoading(false)
 					setFixtureData(data);
 				});
 		}
-
-
-
 	}, [leagueData, fixtureData]);
 
 	return (
