@@ -1,16 +1,32 @@
 import React, { useState } from 'react';
 import OfficerTable from "./OfficerTable";
+import {useLocation} from "react-router-dom";
 
-function TadbaOfficers({ organisation }) {
-	const [officers, setOfficers] = useState([])
+function OfficersComponent({}) {
+	const [officers, setOfficers] = useState()
+	const [officersLoading, setLoading] = useState(false)
 	const [officersLoaded, setLoaded] = useState(false)
+	const [organisation, setOrganisation] = useState('')
+
+	const location = useLocation()
 
 	React.useEffect(() => {
-		if (!officersLoaded) {
-			fetch('https://tjrlh6izkj.execute-api.eu-west-2.amazonaws.com/PRD/officers?organisation=' + organisation)
+
+		console.log('in the use effect')
+		console.log(officersLoading)
+		console.log(officersLoaded)
+
+		const params = new URLSearchParams(location.search)
+		setOrganisation(params.get("organisation"))
+
+		if (!officersLoaded && !officersLoading) {
+			console.log('starting to load')
+			setLoading(true)
+			fetch('https://korkszmntc.execute-api.eu-west-2.amazonaws.com/PRD/officers?organisation=' + params.get("organisation"))
 				.then(results => results.json())
 				.then(data => {
 					setOfficers(data);
+					setLoading(false)
 					setLoaded(true);
 				});
 		}
@@ -26,4 +42,4 @@ function TadbaOfficers({ organisation }) {
 	)
 }
 
-export default TadbaOfficers;
+export default OfficersComponent;

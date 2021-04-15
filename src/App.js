@@ -23,8 +23,7 @@ function App() {
         <TopNav fixtureGroups={friendlyFixtureGroups} />
         <Container>
           <Route exact path="/" component={Home} />
-          <Route path="/tabaofficers"><Officers organisation={'TADBA'} /></Route>
-          <Route path="/talbaofficers"> <Officers organisation={'TALBA'} /></Route>
+          <Route path="/officers"><Officers/></Route>
           <Route path="/leagueselection"> <LeagueSelection/></Route>
           <Route path="/leagueandfixtures"> <LeagueAndFixturePage/></Route>
           {friendlyFixtureGroups.map((fixtureGroup, index) => {
