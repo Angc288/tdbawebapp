@@ -21,6 +21,7 @@ function TopNavBar({ fixtureGroups }) {
             <OfficerSubmenu />
             <FixtureSubmenu fixtureGroupsProps={fixtureGroups} />
             <LinkSubmenu />
+            <Nav.Link href="/admin">Admin</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

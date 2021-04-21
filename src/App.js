@@ -14,6 +14,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 import { Container } from 'react-bootstrap';
+import AdminHome from './components/admin/AdminSelect';
+import CreateNewLeague from './components/admin/newleague/CreateNewLeague';
+import UpdateFixture from './components/admin/updateresult/UpdateFixture';
 
 
 function App() {
@@ -23,15 +26,18 @@ function App() {
         <TopNav fixtureGroups={friendlyFixtureGroups} />
         <Container>
           <Route exact path="/" component={Home} />
-          <Route path="/officers"><Officers/></Route>
-          <Route path="/leagueselection"> <LeagueSelection/></Route>
-          <Route path="/leagueandfixtures"> <LeagueAndFixturePage/></Route>
+          <Route path="/officers"><Officers /></Route>
+          <Route path="/leagueselection"> <LeagueSelection /></Route>
+          <Route path="/leagueandfixtures"> <LeagueAndFixturePage /></Route>
           {friendlyFixtureGroups.map((fixtureGroup, index) => {
             if (fixtureGroup.active) {
               const path = "/friendlyfixtures/" + fixtureGroup.id
               return <Route path={path}><FriendlyFixturesWrapper fixtureGroupIdProps={fixtureGroup.id} fixtureGroupNameProps={fixtureGroup.name} /></Route>
             }
           })}
+          <Route path="/admin"> <AdminHome /></Route>
+          <Route path="/admin/createnewleague"> <CreateNewLeague /></Route>
+          <Route path="/admin/updatefixture"> <UpdateFixture /></Route>
         </Container>
       </div>
     </Router>
