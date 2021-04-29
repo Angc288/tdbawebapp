@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import DatePicker from "react-datepicker";
 import AdminFixture from './AdminFixture';
-
+import "react-datepicker/dist/react-datepicker.css";
 const AdminRound = ({callback, roundId}) => {
 
     const [numberOfFixtures, setNumberOfFixtures] = useState(1)
-    const [fixtureDate, setFixtureDate] = useState("")
+    const [fixtureDate, setFixtureDate] = useState(new Date())
     const newFixtureAddedToUi = () => {
         setNumberOfFixtures(numberOfFixtures + 1)
     }
@@ -25,7 +25,6 @@ const AdminRound = ({callback, roundId}) => {
         setFixtureDate(dateParam)
         setRoundData({ ...roundData, roundDate: dateParam })
     }
-
     const addFixture = (fixture) => {
         roundData.fixtures.push(fixture)
     }
@@ -50,12 +49,16 @@ const AdminRound = ({callback, roundId}) => {
 
     }
 
+    const deleteRoundFromUi = (round) => {
+    }
+
     return (<div>
         <input type="button" onClick={e => newFixtureAddedToUi()} value="add fixture" />
         <label>
             Date:
-                <input type="text" value={fixtureDate} onChange={e => fixtureDateChanged(e.target.value)} />
+                <DatePicker selected={fixtureDate} onChange={date => fixtureDateChanged(date)} dateFormat='yyyy-MM-dd' />
         </label>
+        <input type="button" onClick={e => deleteRoundFromUi()} value="delete round" />
         <div>
             {[...Array(numberOfFixtures)].map((e, i) => <AdminFixture callback={fixturesChanged} fixtureId={i} />)
             }
