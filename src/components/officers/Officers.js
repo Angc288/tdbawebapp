@@ -11,16 +11,10 @@ function OfficersComponent({}) {
 	const location = useLocation()
 
 	React.useEffect(() => {
-
-		console.log('in the use effect')
-		console.log(officersLoading)
-		console.log(officersLoaded)
-
 		const params = new URLSearchParams(location.search)
 		setOrganisation(params.get("organisation"))
 
 		if (!officersLoaded && !officersLoading) {
-			console.log('starting to load')
 			setLoading(true)
 			fetch('https://korkszmntc.execute-api.eu-west-2.amazonaws.com/PRD/officers?organisation=' + params.get("organisation"))
 				.then(results => results.json())

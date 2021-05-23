@@ -43,7 +43,6 @@ const UpdateFixture = () => {
             .then(results => results.json())
             .then(data => {
                 setFixtureData(data);
-                console.log('fixtureDataSet')
             });
     }
 

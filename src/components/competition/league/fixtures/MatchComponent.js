@@ -18,7 +18,6 @@ function MatchComponent({ matchParam, editable }) {
 
     const submitResult = (evt) => {
         evt.preventDefault();
-        console.log('submitting')
         submitScore(matchState)
     }
 
@@ -53,9 +52,6 @@ function MatchComponent({ matchParam, editable }) {
         setSubmittingScore(false)
 
     }, [isSubmittingScore]) // update the callback if the state changes
-
-    console.log(hasAwayScoreChanged)
-    console.log(hasHomeScoreChanged)
 
     return (
         <div style={{

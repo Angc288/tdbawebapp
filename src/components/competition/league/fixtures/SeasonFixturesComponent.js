@@ -16,11 +16,6 @@ function SeasonFixturesComponent({seasonsFixturesParam, editable}) {
         round.fixtures.sort((a, b) => a.id.localeCompare(b.id))
     });
 
-    console.log('in the season fixture component')
-
-    // console.log(seasonState)
-    // console.log(seasonsFixturesParam)
-
     return (
         <div>
             {seasonState.map((round, roundIndex) =>

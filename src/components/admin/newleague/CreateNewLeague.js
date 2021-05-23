@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect, useRef } from 'react';
 import AdminRound from './AdminRound';
 import teams from "../../../data/teams.json"
 import womensTeams from "../../../data/womensTeams.json"
+import Select from 'react-select'
 
 const CreateNewLeague = () => {
 
@@ -30,7 +31,6 @@ const CreateNewLeague = () => {
     // set isMounted to false when we unmount the component
     // useEffect(() => {
 
-    //     console.log(numberOfFixturesPerRound)
 
     //     return () => {
     //         isMounted.current = false
@@ -105,8 +105,8 @@ const CreateNewLeague = () => {
         setBody({ ...body, rounds: rounds })
     }
 
-    const organChange = (org) => {
-        setOrganisation(org)
+    const handleOrganisationChange = (event) => {
+        setOrganisation(event.value)
         loadTeamsForOrg()
     }
 
@@ -134,38 +134,40 @@ const CreateNewLeague = () => {
 
     }
 
+    const organisationSelectOptions = [
+        { value: 'TDBA', label: 'T&DBA' },
+        { value: 'TALBA', label: 'TALBA' }
+    ]
+
     return (
         <div>
-            <div >
-                {/* <DropdownButton id="dropdown-basic-button" title={organisation} onSelect={organChange}>
-                    <Dropdown.Item eventKey="TALBA">TALBA</Dropdown.Item>
-                    <Dropdown.Item eventKey="T_DBA">T&DBA</Dropdown.Item>
-                </DropdownButton> */}
-                <label style={{padding:10}}>
-                    Organisation:
-                    <input type="text" value={organisation} onChange={e => organChange(e.target.value)} style={{
-                        width: 90
-                    }}/>
-                </label>
-                <label style={{padding:10}}>
+            <div>
+                <div style={{
+                        width: 120
+                    }}>
+                    <label style={{ padding: 10 }}>
+                        Organisation:</label>
+                    <Select options={organisationSelectOptions} onChange={handleOrganisationChange} name={organisation} style={{ padding: 20, width: 175 }} />
+                </div>
+                <label style={{ padding: 10 }}>
                     Name:
                     <input type="text" value={name} onChange={e => nameChanged(e.target.value)} style={{
                         width: 120
-                    }}/>
+                    }} />
                 </label>
-                <label style={{padding:10}}>
+                <label style={{ padding: 10 }}>
                     Season:
                     <input type="text" value={year} onChange={e => yearChanged(e.target.value)} style={{
                         width: 70
-                    }}/>
+                    }} />
                 </label>
-                <label style={{padding:10}}>
+                <label style={{ padding: 10 }}>
                     Number of teams:
                     <input type="text" value={numberOfFixturesPerRound * 2} onChange={e => numberOfTeamsChanged(e.target.value)} style={{
                         width: 35
                     }} />
                 </label>
-                <label style={{padding:10}}>
+                <label style={{ padding: 10 }}>
                     Number of weeks:
                     <input type="text" value={numberOfRounds} onChange={e => numberOfRoundsChanged(e.target.value)} style={{
                         width: 35

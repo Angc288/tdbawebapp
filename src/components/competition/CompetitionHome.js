@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import qs from 'query-string';
 import Select from 'react-select'
 import friendlyFixtureGroups from "../../data/friendlyFixtures_groups.json"
+import CompetitionDisplayPanel from './CompetitionDisplayPanel';
 
 function CompetitionHome() {
 
     const [selectedSeason, setSelectedSeason] = useState("Current")
     const [selectedOrganisation, setSelectedOrganisation] = useState("All")
     const [leagueLinks, setLeagueLinks] = useState([])
-    const [borderWidth, setBorderWidth] = useState(1)
 
     const handleSeasonChange = (event) => {
         setSelectedSeason(event.value)
@@ -35,16 +35,13 @@ function CompetitionHome() {
                 return results.json()
             })
             .then(data => {
-                setBorderWidth(1)
                 setLeagueLinks(data)
             })
             .catch(error => {
                 setLeagueLinks([])
-                setBorderWidth(0)
             });
 
     }
-
 
     React.useEffect(() => {
         readLeaguesFromSource()
@@ -80,66 +77,25 @@ function CompetitionHome() {
                     <label>Organisation:</label>
                     <Select options={organisationSelectOptions} onChange={handleOrganisationChange} name={selectedOrganisation} style={{ padding: 20, width: 175 }} />
                 </div>
+            </div>
 
-            </div>
-            <div style={{
-                borderWidth: borderWidth,
-                borderColor: 'blue',
-                borderStyle: 'solid',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-around',
-                padding: 20,
-                marginBottom: 20
-            }}>
-                <h1>League</h1>
-                {leagueLinks.map((link, index) => {
-                    const newQueryParam = {
-                        divisionId: link.DivisionId,
-                        divisionName: link.divisionName,
-                        divisionYear: link.divisionYear
-                    }
-                    return <Link to={`/leagueandfixtures?${qs.stringify(newQueryParam)}`}>{link.divisionName}</Link>
-                })}
-            </div>
-            <div style={{
-                borderWidth: borderWidth,
-                borderColor: 'blue',
-                borderStyle: 'solid',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-around',
-                padding: 20,
-                marginBottom: 20
-            }}>
-                <h1>Friendly</h1>
-                {friendlyFixtureGroups.map((fixtureGroup, index) => {
-                    if (fixtureGroup.active) {
-                        const path = "/friendlyfixtures/" + fixtureGroup.id
-                        return <Link to={path}> {fixtureGroup.name}</Link>
-                    }
-                })}
-            </div>
-            <div style={{
-                borderWidth: borderWidth,
-                borderColor: 'blue',
-                borderStyle: 'solid',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-around',
-                padding: 20,
-                marginBottom: 20
-            }}>
-                <h1>Knockout</h1>
-                {leagueLinks.map((link, index) => {
-                    const newQueryParam = {
-                        divisionId: link.DivisionId,
-                        divisionName: link.divisionName,
-                        divisionYear: link.divisionYear
-                    }
-                    return <Link to={`/leagueandfixtures?${qs.stringify(newQueryParam)}`}>{link.divisionName}</Link>
-                })}
-            </div>
+            <CompetitionDisplayPanel competionTypeParam='League' linksParam={leagueLinks.map((link, index) => {
+                const newQueryParam = {
+                    divisionId: link.DivisionId,
+                    divisionName: link.divisionName,
+                    divisionYear: link.divisionYear
+                }
+
+                const linkObject = { url: "/leagueandfixtures?" + qs.stringify(newQueryParam), name: link.divisionName }
+
+                return linkObject
+            })}></CompetitionDisplayPanel>
+            <CompetitionDisplayPanel competionTypeParam='Friendly' linksParam={friendlyFixtureGroups.map((fixtureGroup, index) => {
+                if (fixtureGroup.active) {
+                    return { url: "/friendlyfixtures/" + fixtureGroup.id, name: fixtureGroup.name }
+                }
+            })}></CompetitionDisplayPanel>
+            <CompetitionDisplayPanel competionTypeParam='Knockout' linksParam={[]}/>
         </div>
     </div>
     );
