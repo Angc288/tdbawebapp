@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import LeagueSubmenu from "./LeagueSubmenu"
 import FixtureSubmenu from "./FixtureSubmenu"
 import OfficerSubmenu from "./OfficerSubmenu"
 import LinkSubmenu from "./LinkSubmenu"
@@ -17,11 +16,11 @@ function TopNavBar({ fixtureGroups }) {
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/leagueselection">League Bowls</Nav.Link>
-            <LeagueSubmenu />
             <OfficerSubmenu />
             <FixtureSubmenu fixtureGroupsProps={fixtureGroups} />
             <LinkSubmenu />
             <Nav.Link href="/admin">Admin</Nav.Link>
+            <Nav.Link href="/contactus"> Contact Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

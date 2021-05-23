@@ -7,6 +7,7 @@ function LeagueSelection() {
     const [selectedSeason, setSelectedSeason] = useState("Current")
     const [selectedOrganisation, setSelectedOrganisation] = useState("All")
     const [leagueLinks, setLeagueLinks] = useState([])
+    const [borderWidth, setBorderWidth] = useState(1)
 
     const handleSeasonChange = (e) => {
         setSelectedSeason(e)
@@ -32,10 +33,12 @@ function LeagueSelection() {
                 return results.json()
             })
             .then(data => {
+                setBorderWidth(1)
                 setLeagueLinks(data)
             })
             .catch(error => {
                 setLeagueLinks([])
+                setBorderWidth(0)
             });
 
     }
@@ -48,18 +51,33 @@ function LeagueSelection() {
 
     return (<div>
         <h1>League Bowls</h1>
-        <div>
-            <DropdownButton id="dropdown-basic-button" title={selectedSeason} onSelect={handleSeasonChange}>
+        <div style = {{
+            padding:20
+        }}>
+            <div style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center'
+        }}>
+            <DropdownButton id="dropdown-basic-button" title={selectedSeason} onSelect={handleSeasonChange} style={{padding:20 }}>
                 <Dropdown.Item eventKey="Current" active="true">Current</Dropdown.Item>
                 <Dropdown.Item eventKey="2019">2019</Dropdown.Item>
                 <Dropdown.Item eventKey="2018">2018</Dropdown.Item>
             </DropdownButton>
-            <DropdownButton id="dropdown-basic-button" title={selectedOrganisation} onSelect={handleOrganisationChange}>
+            <DropdownButton id="dropdown-basic-button" title={selectedOrganisation} onSelect={handleOrganisationChange} style={{padding:20 }}>
                 <Dropdown.Item eventKey="All" active="true">All</Dropdown.Item>
                 <Dropdown.Item eventKey="TDBA">T&DBA</Dropdown.Item>
                 <Dropdown.Item eventKey="TALBA">TALBA</Dropdown.Item>
             </DropdownButton>
-            <div>
+            </div>
+            <div style={{
+                borderWidth: borderWidth,
+                borderColor: 'blue',
+                borderStyle: 'block',
+                display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-around'
+            }}>
                 {leagueLinks.map((link, index) => {
                     return <Link to={`/leagueandfixtures?divisionId=${link.DivisionId}`}>{link.divisionName}</Link>
                 })}
@@ -67,9 +85,6 @@ function LeagueSelection() {
         </div>
     </div>
     );
-
-
-
 
 }
 

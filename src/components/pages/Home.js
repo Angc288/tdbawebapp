@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import SeasonFixturesComponent from '../displayFixtures/SeasonFixturesComponent';
 
 class Home extends Component{
 
@@ -14,6 +15,7 @@ class Home extends Component{
 	  Vestibulum tempus risus odio, sed facilisis arcu porta nec. Praesent nec faucibus tellus, sit amet viverra ex. Ut nisi velit, tincidunt vel enim porta, vehicula bibendum mauris. Integer euismod imperdiet ante, ut hendrerit lacus ullamcorper non. Donec aliquet velit sed elit auctor egestas. Vivamus sagittis sed nisi a vehicula. Duis dapibus condimentum magna.
   
 	  Proin eget quam in purus condimentum fermentum. Nullam finibus ligula et libero auctor malesuada. Ut auctor ligula risus, non mollis nibh facilisis sed. Maecenas dapibus ex in vehicula viverra. Ut varius dolor vitae libero bibendum hendrerit. Vivamus vel blandit tortor. Sed ante metus, tincidunt id leo in, ullamcorper aliquet ipsum. Nulla a vehicula diam.
+		
 		
 		</div>
 		 );

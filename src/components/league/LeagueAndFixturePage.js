@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import LeagueTable from './LeagueTable'
 import FixtureBlock from './FixtureBlock'
 import {useLocation} from "react-router-dom";
+import SeasonFixturesComponent from '../displayFixtures/SeasonFixturesComponent';
+import { useHistory } from "react-router-dom";
 
 const LeagueAndFixturePage = () => {
 
@@ -39,13 +41,17 @@ const LeagueAndFixturePage = () => {
 		}
 	}, [leagueData, fixtureData]);
 
+	let history = useHistory();
+
 	return (
 		<div>
-			<h2>{leagueName}</h2>
+			<div> <button onClick={() => history.goBack()}>Back</button>   <h2>{leagueName}</h2></div>
+			
 			{leagueData && fixtureData ?
 				<div>
 					<LeagueTable data={leagueData} />
-					<FixtureBlock rounds={fixtureData} />
+					{/* <FixtureBlock rounds={fixtureData} /> */}
+					<SeasonFixturesComponent seasonsFixturesParam={fixtureData} editable={false}/>
 				</div>
 				:
 				<div> Loading</div>

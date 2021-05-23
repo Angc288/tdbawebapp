@@ -75,7 +75,7 @@ function LeagueTable({ data }) {
   return (
     <MaUTable {...getTableProps()}
       style={{
-        border: 'solid 1px blue',
+        //border: 'solid 1px blue',
         marginBottom: 100
       }}>
       <TableHead>
@@ -84,11 +84,11 @@ function LeagueTable({ data }) {
             {headerGroup.headers.map(column => (
               <th {...column.getHeaderProps(column.getSortByToggleProps())}
                 style={{
-                  background: '#360037',
-                  color: 'white',
+                  background: '#E8E8E8',
+                  color: 'dark grey',
                   fontWeight: 'bold',
                   fontSize: '20',
-                  padding: '3px 15px 3px 15px',
+                  padding: '20px 8px 20px 8px',
                   marginBottom: 40
                 }}>
                 {column.render('Header')}
@@ -107,9 +107,9 @@ function LeagueTable({ data }) {
                   <TableCell
                     {...cell.getCellProps()}
                     style={{
-                      padding: '5px',
-                      border: 'solid 1px gray',
-                      background: '#E8E8E8'
+                      padding: '20px 8px 20px 8px',
+                      // border: 'solid 1px gray',
+                      background: 'white'
                     }}
                   >
                     {cell.render('Cell')}

@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import TopNav from './components/topmenu/TopNav';
 import Home from './components/pages/Home';
+import ContactUs from './components/pages/ContactUs';
+
 import Officers from './components/officers/Officers';
 
 import LeagueAndFixturePage from './components/league/LeagueAndFixturePage';
@@ -38,6 +40,7 @@ function App() {
           <Route path="/admin"> <AdminHome /></Route>
           <Route path="/admin/createnewleague"> <CreateNewLeague /></Route>
           <Route path="/admin/updatefixture"> <UpdateFixture /></Route>
+          <Route path="/contactus"> <ContactUs /></Route>
         </Container>
       </div>
     </Router>

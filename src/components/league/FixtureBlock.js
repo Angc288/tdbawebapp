@@ -1,6 +1,6 @@
 import React from 'react';
 
-function FixtureBlock({ rounds }) {
+function FixtureBlock({ rounds, editable }) {
 
     rounds.sort((a, b) => a.id - b.id)
 

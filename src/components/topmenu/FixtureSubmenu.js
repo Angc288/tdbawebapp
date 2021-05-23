@@ -6,7 +6,7 @@ function FixtureSubmenu({ fixtureGroupsProps }) {
   const [fixtureGroups] = useState(fixtureGroupsProps)
 
   return (
-    <NavDropdown title="Fixture" id="basic-nav-dropdown">
+    <NavDropdown title="Friendly Fixtures" id="basic-nav-dropdown">
       {fixtureGroups.map((fixtureGroup, index) => {
         if (fixtureGroup.active) {
           return <NavDropdown.Item href={"/friendlyfixtures/" + fixtureGroup.id} key={index}>{fixtureGroup.name} </NavDropdown.Item>

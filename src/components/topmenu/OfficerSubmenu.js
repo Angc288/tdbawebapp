@@ -6,7 +6,7 @@ class OfficerSubmenu extends React.Component {
 
   render() {
     return (
-      <NavDropdown title="Officer" id="basic-nav-dropdown">
+      <NavDropdown title="Officers" id="basic-nav-dropdown">
         <NavDropdown.Item><Link to={`/officers?organisation=TADBA`}>TABA Officers</Link></NavDropdown.Item>
         <NavDropdown.Item><Link to={`/officers?organisation=TALBA`}>TALBA Officers</Link></NavDropdown.Item>
       </NavDropdown>
