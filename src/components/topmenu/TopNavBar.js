@@ -15,9 +15,9 @@ function TopNavBar({ fixtureGroups }) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/leagueselection">League Bowls</Nav.Link>
+            <Nav.Link href="/leagueselection">Competitions</Nav.Link>
             <OfficerSubmenu />
-            <FixtureSubmenu fixtureGroupsProps={fixtureGroups} />
+            {/* <FixtureSubmenu fixtureGroupsProps={fixtureGroups} /> */}
             <LinkSubmenu />
             <Nav.Link href="/admin">Admin</Nav.Link>
             <Nav.Link href="/contactus"> Contact Us</Nav.Link>

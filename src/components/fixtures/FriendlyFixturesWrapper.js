@@ -3,6 +3,7 @@ import FriendlyFixturesTable from './FriendlyFixturesTable'
 import outdoorFixtures from "../../data/outdoorFixtures.json"
 import ladiesFixtures from "../../data/ladiesFixtures.json"
 import indoorFixtures from "../../data/indoorFixtures.json"
+import { useHistory } from "react-router-dom";
 
 
 function FriendlyFixturesWrapper({ fixtureGroupIdProps, fixtureGroupNameProps }) {
@@ -12,32 +13,7 @@ function FriendlyFixturesWrapper({ fixtureGroupIdProps, fixtureGroupNameProps })
     const [fixtureGroupId] = useState(fixtureGroupIdProps)
     const [fixtureLoaded, setFixtureLoaded] = useState(false)
 
-    // React.useEffect(() => {
-
-    // 	if (!leagueData && !leagueLoading) {
-    // 		setLeagueLoading(true)
-    // 		fetch('https://korkszmntc.execute-api.eu-west-2.amazonaws.com/PRD/leaguetables/' + divisionId)
-    // 			.then(results => results.json())
-    // 			.then(data => {
-    // 				setLeagueLoading(false);
-    // 				setLeagueData(data);
-    // 			});
-    // 	}
-
-    // 	if (!fixtureData && !fixtureLoading) {
-    // 		setFixtureLoading(true)
-    // 		fetch('https://korkszmntc.execute-api.eu-west-2.amazonaws.com/PRD/division/' + divisionId + '/fixtures')
-    // 			.then(results => results.json())
-    // 			.then(data => {
-    // 				setFixtureLoading(false)
-    // 				setFixtureData(data);
-    // 			});
-    // 	}
-
-
-
-    // }, [leagueData, fixtureData]);
-
+	let history = useHistory();
 
     React.useEffect(() => {
         if (!fixtureLoaded) {
@@ -54,16 +30,9 @@ function FriendlyFixturesWrapper({ fixtureGroupIdProps, fixtureGroupNameProps })
 
     return (
         <div>
+            <button onClick={() => history.goBack()}>Back</button>
             <h2>{fixtureGroupName}</h2>
             <FriendlyFixturesTable data={fixtureData} />
-            {/* {leagueData && fixtureData ?
-				<div>
-					<LeagueTable data={leagueData} />
-					<FixtureBlock rounds={fixtureData} />
-				</div>
-				:
-				<div> Loading</div>
-			} */}
         </div>
     )
 

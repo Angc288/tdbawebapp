@@ -5,6 +5,7 @@ import {useLocation} from "react-router-dom";
 import SeasonFixturesComponent from '../displayFixtures/SeasonFixturesComponent';
 import { useHistory } from "react-router-dom";
 
+
 const LeagueAndFixturePage = () => {
 
 	const [fixtureData, setFixtureData] = useState()
@@ -18,7 +19,7 @@ const LeagueAndFixturePage = () => {
 	React.useEffect(() => {
 		const params = new URLSearchParams(location.search)
 
-		setLeagueName(params.get("divisionId"))
+		setLeagueName(params.get("divisionName"))
 
 		if (!leagueData && !leagueLoading) {
 			setLeagueLoading(true)

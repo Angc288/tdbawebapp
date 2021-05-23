@@ -16,7 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 import { Container } from 'react-bootstrap';
-import AdminHome from './components/admin/AdminSelect';
+import AdminHome from './components/admin/AdminHomePage';
 import CreateNewLeague from './components/admin/newleague/CreateNewLeague';
 import UpdateFixture from './components/admin/updateresult/UpdateFixture';
 

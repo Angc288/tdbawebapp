@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
-import { DropdownButton, Dropdown } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import qs from 'query-string';
+import Select from 'react-select'
+import friendlyFixtureGroups from "../../data/friendlyFixtures_groups.json"
+import FriendlyFixturesWrapper from '../fixtures/FriendlyFixturesWrapper';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 function LeagueSelection() {
 
@@ -9,12 +13,12 @@ function LeagueSelection() {
     const [leagueLinks, setLeagueLinks] = useState([])
     const [borderWidth, setBorderWidth] = useState(1)
 
-    const handleSeasonChange = (e) => {
-        setSelectedSeason(e)
+    const handleSeasonChange = (event) => {
+        setSelectedSeason(event.value)
     }
 
-    const handleOrganisationChange = (e) => {
-        setSelectedOrganisation(e)
+    const handleOrganisationChange = (event) => {
+        setSelectedOrganisation(event.value)
     }
 
     const readLeaguesFromSource = () => {
@@ -48,38 +52,94 @@ function LeagueSelection() {
         readLeaguesFromSource()
     }, [selectedSeason, selectedOrganisation]);
 
+    const yearSelectOptions = [
+        { value: 'Current', label: 'Current' },
+        { value: '2019', label: '2019' },
+        { value: '2018', label: '2018' }
+    ]
+
+    const organisationSelectOptions = [
+        { value: 'All', label: 'All' },
+        { value: 'TDBA', label: 'T&DBA' },
+        { value: 'TALBA', label: 'TALBA' }
+    ]
 
     return (<div>
-        <h1>League Bowls</h1>
-        <div style = {{
-            padding:20
+        <h1>Competitions</h1>
+        <div style={{
+            padding: 20
         }}>
             <div style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center'
-        }}>
-            <DropdownButton id="dropdown-basic-button" title={selectedSeason} onSelect={handleSeasonChange} style={{padding:20 }}>
-                <Dropdown.Item eventKey="Current" active="true">Current</Dropdown.Item>
-                <Dropdown.Item eventKey="2019">2019</Dropdown.Item>
-                <Dropdown.Item eventKey="2018">2018</Dropdown.Item>
-            </DropdownButton>
-            <DropdownButton id="dropdown-basic-button" title={selectedOrganisation} onSelect={handleOrganisationChange} style={{padding:20 }}>
-                <Dropdown.Item eventKey="All" active="true">All</Dropdown.Item>
-                <Dropdown.Item eventKey="TDBA">T&DBA</Dropdown.Item>
-                <Dropdown.Item eventKey="TALBA">TALBA</Dropdown.Item>
-            </DropdownButton>
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center'
+            }}>
+                <div style={{ padding: 20, width: 175 }}>
+                    <label>Season:</label>
+                    <Select options={yearSelectOptions} onChange={handleSeasonChange} style={{ padding: 20, width: 175 }} />
+                </div>
+                <div style={{ padding: 20, width: 175 }}>
+                    <label>Organisation:</label>
+                    <Select options={organisationSelectOptions} onChange={handleOrganisationChange} name={selectedOrganisation} style={{ padding: 20, width: 175 }} />
+                </div>
+
             </div>
             <div style={{
                 borderWidth: borderWidth,
                 borderColor: 'blue',
-                borderStyle: 'block',
+                borderStyle: 'solid',
                 display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-around'
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                padding: 20,
+                marginBottom: 20
             }}>
+                <h1>League</h1>
                 {leagueLinks.map((link, index) => {
-                    return <Link to={`/leagueandfixtures?divisionId=${link.DivisionId}`}>{link.divisionName}</Link>
+                    const newQueryParam = {
+                        divisionId: link.DivisionId,
+                        divisionName: link.divisionName,
+                        divisionYear: link.divisionYear
+                    }
+                    return <Link to={`/leagueandfixtures?${qs.stringify(newQueryParam)}`}>{link.divisionName}</Link>
+                })}
+            </div>
+            <div style={{
+                borderWidth: borderWidth,
+                borderColor: 'blue',
+                borderStyle: 'solid',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                padding: 20,
+                marginBottom: 20
+            }}>
+                <h1>Friendly</h1>
+                {friendlyFixtureGroups.map((fixtureGroup, index) => {
+                    if (fixtureGroup.active) {
+                        const path = "/friendlyfixtures/" + fixtureGroup.id
+                        return <Link to={path}> {fixtureGroup.name}</Link>
+                    }
+                })}
+            </div>
+            <div style={{
+                borderWidth: borderWidth,
+                borderColor: 'blue',
+                borderStyle: 'solid',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                padding: 20,
+                marginBottom: 20
+            }}>
+                <h1>Knockout</h1>
+                {leagueLinks.map((link, index) => {
+                    const newQueryParam = {
+                        divisionId: link.DivisionId,
+                        divisionName: link.divisionName,
+                        divisionYear: link.divisionYear
+                    }
+                    return <Link to={`/leagueandfixtures?${qs.stringify(newQueryParam)}`}>{link.divisionName}</Link>
                 })}
             </div>
         </div>
