@@ -38,7 +38,6 @@ const AdminFixture = ({ callback, fixtureId, teamNames }) => {
             width: 300
         }}>
             Home Team:
-                {/* <input type="text" value={homeTeam} onChange={e => homeTeamChanged(e.target.value)} /> */}
             <Select options={newOptions} onChange={e => homeTeamChanged(e)} />
         </label>
         <span> v </span>
@@ -46,7 +45,6 @@ const AdminFixture = ({ callback, fixtureId, teamNames }) => {
             width: 300
         }}>
             Away Team:
-                {/* <input type="text" value={awayTeam} onChange={e => awayTeamChanged(e.target.value)} /> */}
             <Select options={newOptions} onChange={e => awayTeamChanged(e)} />
         </label>
     </div>

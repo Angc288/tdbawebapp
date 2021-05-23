@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import SeasonFixturesComponent from '../../displayFixtures/SeasonFixturesComponent';
+
+
+import SeasonFixturesComponent from '../../competition/league/fixtures/SeasonFixturesComponent';
+
+
 
 const UpdateFixture = () => {
 

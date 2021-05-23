@@ -3,10 +3,8 @@ import { Link } from "react-router-dom";
 import qs from 'query-string';
 import Select from 'react-select'
 import friendlyFixtureGroups from "../../data/friendlyFixtures_groups.json"
-import FriendlyFixturesWrapper from '../fixtures/FriendlyFixturesWrapper';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-function LeagueSelection() {
+function CompetitionHome() {
 
     const [selectedSeason, setSelectedSeason] = useState("Current")
     const [selectedOrganisation, setSelectedOrganisation] = useState("All")
@@ -148,4 +146,4 @@ function LeagueSelection() {
 
 }
 
-export default LeagueSelection;
+export default CompetitionHome;

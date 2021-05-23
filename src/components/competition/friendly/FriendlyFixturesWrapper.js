@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import FriendlyFixturesTable from './FriendlyFixturesTable'
-import outdoorFixtures from "../../data/outdoorFixtures.json"
-import ladiesFixtures from "../../data/ladiesFixtures.json"
-import indoorFixtures from "../../data/indoorFixtures.json"
+import outdoorFixtures from "../../../data/outdoorFixtures.json"
+import ladiesFixtures from "../../../data/ladiesFixtures.json"
+import indoorFixtures from "../../../data/indoorFixtures.json"
 import { useHistory } from "react-router-dom";
 
 

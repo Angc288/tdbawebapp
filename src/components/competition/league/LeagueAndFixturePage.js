@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import LeagueTable from './LeagueTable'
-import FixtureBlock from './FixtureBlock'
+import SeasonFixturesComponent from './fixtures/SeasonFixturesComponent'
 import {useLocation} from "react-router-dom";
-import SeasonFixturesComponent from '../displayFixtures/SeasonFixturesComponent';
 import { useHistory } from "react-router-dom";
 
 
@@ -51,7 +50,6 @@ const LeagueAndFixturePage = () => {
 			{leagueData && fixtureData ?
 				<div>
 					<LeagueTable data={leagueData} />
-					{/* <FixtureBlock rounds={fixtureData} /> */}
 					<SeasonFixturesComponent seasonsFixturesParam={fixtureData} editable={false}/>
 				</div>
 				:

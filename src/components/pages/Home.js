@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import SeasonFixturesComponent from '../displayFixtures/SeasonFixturesComponent';
 
 class Home extends Component{
 
