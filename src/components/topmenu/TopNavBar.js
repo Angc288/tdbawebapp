@@ -4,13 +4,14 @@ import LeagueSubmenu from "./LeagueSubmenu"
 import FixtureSubmenu from "./FixtureSubmenu"
 import OfficerSubmenu from "./OfficerSubmenu"
 import LinkSubmenu from "./LinkSubmenu"
+import { NavHashLink } from 'react-router-hash-link';
 
 // This is now not a className but a function you can pass props as arguments
 function TopNavBar({ fixtureGroups }) {
   //No render is required within a functional component you can just return the HTML.
   return (
     <>
-      <Navbar bg="light" expand="sm">
+      <Navbar background-color="white" expand="sm" sticky="top">
         <Navbar.Brand href="/">Thurrock & District Bowls Association</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -20,6 +21,8 @@ function TopNavBar({ fixtureGroups }) {
             <OfficerSubmenu />
             <FixtureSubmenu fixtureGroupsProps={fixtureGroups} />
             <LinkSubmenu />
+            <NavHashLink smooth to="/one#insideThree">Link to Hash Fragment</NavHashLink>
+            <Nav.Link href="/one">One</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

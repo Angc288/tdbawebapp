@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import TopNav from './components/topmenu/TopNav';
 import Home from './components/pages/Home';
 import Officers from './components/officers/Officers';
+import ComponentOne from './components/pages/test/ComponentOne';
 
 import LeagueAndFixturePage from './components/league/LeagueAndFixturePage';
 import FriendlyFixturesWrapper from './components/fixtures/FriendlyFixturesWrapper';
@@ -37,6 +38,7 @@ function App() {
               return <Route path={path}><FriendlyFixturesWrapper fixtureGroupIdProps={fixtureGroup.id} fixtureGroupNameProps={fixtureGroup.name} /></Route>
             }
           })}
+          <Route path="/one"><ComponentOne /></Route>
           </Container>
         </div>
       </div>
