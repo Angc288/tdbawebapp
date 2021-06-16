@@ -30,7 +30,7 @@ function OfficersComponent({}) {
 		officersLoaded ?
 			(<div>
 				<h2>{organisation} Officers</h2>
-				<OfficerTable officers={officers} />
+				<OfficerTable data={officers} />
 			</div>)
 			: <div>Loading</div>
 	)

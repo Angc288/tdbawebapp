@@ -59,8 +59,7 @@ function CompetitionHome() {
         { value: 'TALBA', label: 'TALBA' }
     ]
 
-    return (<div>
-        <h1>Competitions</h1>
+    return (<div id = "competitions">
         <div style={{
             padding: 20
         }}>

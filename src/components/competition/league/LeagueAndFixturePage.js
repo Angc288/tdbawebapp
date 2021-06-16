@@ -3,6 +3,7 @@ import LeagueTable from './LeagueTable'
 import SeasonFixturesComponent from './fixtures/SeasonFixturesComponent'
 import {useLocation} from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { Container } from 'react-bootstrap';
 
 
 const LeagueAndFixturePage = () => {
@@ -23,6 +24,7 @@ const LeagueAndFixturePage = () => {
 		if (!leagueData && !leagueLoading) {
 			setLeagueLoading(true)
 			fetch('https://tjrlh6izkj.execute-api.eu-west-2.amazonaws.com/production/leaguetables/' + params.get("divisionId"))
+
 				.then(results => results.json())
 				.then(data => {
 					setLeagueLoading(false);
@@ -33,6 +35,7 @@ const LeagueAndFixturePage = () => {
 		if (!fixtureData && !fixtureLoading) {
 			setFixtureLoading(true)
 			fetch('https://tjrlh6izkj.execute-api.eu-west-2.amazonaws.com/production/leaguefixtures?divisionid=' + params.get("divisionId"))
+
 				.then(results => results.json())
 				.then(data => {
 					setFixtureLoading(false)
@@ -45,12 +48,15 @@ const LeagueAndFixturePage = () => {
 
 	return (
 		<div>
-			<div> <button onClick={() => history.goBack()}>Back</button>   <h2>{leagueName}</h2></div>
+			<div>
+				 <button onClick={() => history.goBack()}>Back</button>   <h2>{leagueName}</h2></div>
 			
 			{leagueData && fixtureData ?
 				<div>
+					<Container>
 					<LeagueTable data={leagueData} />
 					<SeasonFixturesComponent seasonsFixturesParam={fixtureData} editable={false}/>
+					</Container>
 				</div>
 				:
 				<div> Loading</div>

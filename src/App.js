@@ -25,8 +25,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <TopNav fixtureGroups={friendlyFixtureGroups} />
-        <Container>
+        <TopNav />
+        <div>
           <Route exact path="/" component={Home} />
           <Route path="/officers"><Officers /></Route>
           <Route path="/leagueselection"> <CompetitionHome /></Route>
@@ -41,7 +41,7 @@ function App() {
           <Route path="/admin/createnewleague"> <CreateNewLeague /></Route>
           <Route path="/admin/updatefixture"> <UpdateFixture /></Route>
           <Route path="/contactus"> <ContactUs /></Route>
-        </Container>
+      </div>
       </div>
     </Router>
   );

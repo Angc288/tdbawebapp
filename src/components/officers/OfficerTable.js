@@ -7,9 +7,10 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 
-function OfficerTable({ officers }) {
+function OfficerTable({ data}) {
 
-  const columns = [
+  const columns = React.useMemo(
+    () => [
     {
       Header: 'Role',
       accessor: 'role', // accessor is the "key" in the data
@@ -22,7 +23,9 @@ function OfficerTable({ officers }) {
       Header: 'Club',
       accessor: 'club', // accessor is the "key" in the data
     }
-  ]
+  ],
+  []
+)
 
   const {
     getTableProps,
@@ -30,7 +33,7 @@ function OfficerTable({ officers }) {
     headerGroups,
     rows,
     prepareRow,
-  } = useTable({ columns, data: officers })
+  } = useTable({ columns, data})
 
   return (
     <MaUTable {...getTableProps()} style={{ border: 'solid 1px blue' }}>
@@ -39,13 +42,14 @@ function OfficerTable({ officers }) {
           <TableRow {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
               <th {...column.getHeaderProps()}
-                style={{
-                  background: '#360037',
-                  color: 'white',
-                  fontWeight: 'bold',
-                  fontSize: '20',
-                  padding: '3px 15px 3px 15px'
-                }}>
+              style={{
+                background: '#E8E8E8',
+                color: 'dark grey',
+                fontWeight: 'bold',
+                fontSize: '20',
+                padding: '20px 8px 20px 8px',
+                marginBottom: 40
+              }}>
                 {column.render('Header')}
               </th>
             ))}
@@ -62,10 +66,9 @@ function OfficerTable({ officers }) {
                   <TableCell
                     {...cell.getCellProps()}
                     style={{
-                      padding: '5px',
-                      border: 'solid 1px gray',
-                      background: '#E8E8E8',
-
+                      padding: '20px 8px 20px 8px',
+                      // border: 'solid 1px gray',
+                      background: 'white'
                     }}
                   >
                     {cell.render('Cell')}
