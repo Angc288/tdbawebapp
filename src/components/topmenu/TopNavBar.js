@@ -1,28 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import FixtureSubmenu from "./FixtureSubmenu"
-import OfficerSubmenu from "./OfficerSubmenu"
 import LinkSubmenu from "./LinkSubmenu"
-import { NavHashLink } from 'react-router-hash-link';
+import { Link, animateScroll } from 'react-scroll';
+import TopNavBrand from "./TopNavBrand"
+import TopNavLink from "./TopNavLink";
 
 // This is now not a className but a function you can pass props as arguments
 function TopNavBar() {
-  //No render is required within a functional component you can just return the HTML.
+
+  const [barColour, setBarColour] = useState('transparent')
+
+  const offset = -140
+  const minDuration = 500
+
+
+  const scrollToTop = () => {
+    setBarColour('transparent')
+    animateScroll.scrollToTop()
+  }
+
+
+  const handleSetActive = (link) => {
+
+    console.log(link)
+    setBarColour('light')
+  }
+
   return (
     <>
-      <Navbar expand="sm" sticky="top" >
-        <Navbar.Brand href="/">Thurrock & District Bowls Association</Navbar.Brand>
+      <Navbar expand="sm" fixed="top" bg={barColour} variant="dark">
+        <Navbar.Brand onClick={scrollToTop}><TopNavBrand></TopNavBrand></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <NavHashLink class="nav-link" activeClassName="nav-link" smooth to="/#about">About Us</NavHashLink>
-            <NavHashLink class="nav-link" activeClassName="nav-link" smooth to="/#latestnews">Latest News</NavHashLink>
-            <NavHashLink class="nav-link" activeClassName="nav-link" smooth to="/#competitions">Competitions</NavHashLink>
-            <NavHashLink class="nav-link" activeClassName="nav-link" smooth to="/#officers">Officers</NavHashLink>
-            <NavHashLink class="nav-link" activeClassName="nav-link" smooth to="/#contactus">Contact Us</NavHashLink>
-            <LinkSubmenu />
-            <Nav.Link href="/admin">Admin</Nav.Link>
+          <Nav>
+            <TopNavLink to="about" handleSetActive={handleSetActive} name="About Us" />
+            <TopNavLink to="latestnews" handleSetActive={handleSetActive} name="Latest News" />
+            <TopNavLink to="competitions" handleSetActive={handleSetActive} name="Competitions" />
+            <TopNavLink to="officers" handleSetActive={handleSetActive} name="Officers" />
+            <TopNavLink to="contactus" handleSetActive={handleSetActive} name="Contact Us" />
+            <LinkSubmenu/>
+            <Nav.Link href="/admin" style={{color:'grey', padding:15}}>Admin</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

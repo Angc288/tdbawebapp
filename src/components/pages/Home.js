@@ -13,7 +13,7 @@ function Home() {
 
 	return (
 		<div>
-			<SlickSlider />
+			<SlickSlider id="img-carousel"/>
 			<HomepageContentHolder component={<About />} header='About Us'/>
 			<HomepageContentHolder component={<LatestNews />} header='Latest News and Events'/>
 			<HomepageContentHolder component={<CompetitionHome />} header='Competitions'/>

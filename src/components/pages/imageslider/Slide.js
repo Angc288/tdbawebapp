@@ -7,7 +7,7 @@ function Slide({content}) {
     textAlign:'center',
     color:'white'
   }}>
-    <img src={content.image}/>
+    <img src={content.image} />
     <div style={{
       position:'absolute',
       top:'50%',

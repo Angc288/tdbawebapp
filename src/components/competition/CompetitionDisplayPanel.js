@@ -20,7 +20,6 @@ function CompetitionDisplayPanel({ linksParam, competionTypeParam }) {
             borderWidth: borderWidth,
             borderColor: 'blue',
             borderStyle: 'solid',
-
             marginBottom: 20
         }}>
             <div>

@@ -6,7 +6,7 @@ function HomepageContentHolder({ component, header }) {
     return (
         <div style={{
             backgroundColor: 'white',
-            paddingTop: 100
+            paddingTop: 150
         }}>
             <Container style={{}}>
                 <h2 style={{ textAlign: 'left' }}>{header}</h2>
