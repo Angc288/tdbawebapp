@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import Slider from "react-slick";
 import Slide from './Slide'
-
+import image1 from "../../../img/slider1.jpeg"
+import image2 from "../../../img/slider2.jpeg"
+import image3 from "../../../img/slider3.jpeg"
+import image4 from "../../../img/slider4.jpeg"
 
 function SlickSlider() {
 
 	const images = [
-		{ text: 'See the latest news and events', image: 'https://images.unsplash.com/photo-1449034446853-66c86144b0ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&h=1000&q=80', link: '' },
-		{ text: 'Keep track of competitions and league tables', image: 'https://images.unsplash.com/photo-1470341223622-1019832be824?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&h=1000&q=80', link: '' },
-		{ text: 'Check out the association officers', image: 'https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&h=1000&q=80', link: '' },
-		{ text: 'Use the links to get more information', image: 'https://images.unsplash.com/photo-1534161308652-fdfcf10f62c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&h=1000&q=80', link: '' }
+		{ text: 'See the latest news and events', image: image1, link: '' },
+		{ text: 'Keep track of competitions and league tables', image: image2, link: '' },
+		{ text: 'Check out the association officers', image: image3, link: '' },
+		{ text: 'Use the links to get more information', image: image4, link: '' }
 	]
 
 

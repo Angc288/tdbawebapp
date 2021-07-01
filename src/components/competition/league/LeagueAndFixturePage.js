@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LeagueTable from './LeagueTable'
 import SeasonFixturesComponent from './fixtures/SeasonFixturesComponent'
-import {useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { Container } from 'react-bootstrap';
 
@@ -13,7 +13,7 @@ const LeagueAndFixturePage = () => {
 	const [leagueName, setLeagueName] = useState()
 	const [leagueLoading, setLeagueLoading] = useState(false)
 	const [fixtureLoading, setFixtureLoading] = useState(false)
-	
+
 	const location = useLocation()
 
 	React.useEffect(() => {
@@ -47,21 +47,20 @@ const LeagueAndFixturePage = () => {
 	let history = useHistory();
 
 	return (
-		<div>
-			<div>
-				 <button onClick={() => history.goBack()}>Back</button>   <h2>{leagueName}</h2></div>
-			
+		<>
+			<div style = {{paddingTop: 100}}>
+				<button onClick={() => history.goBack()}>Back</button>  
+				<h2>{leagueName}</h2>
+			</div>
 			{leagueData && fixtureData ?
-				<div>
-					<Container>
+				<Container>
 					<LeagueTable data={leagueData} />
-					<SeasonFixturesComponent seasonsFixturesParam={fixtureData} editable={false}/>
-					</Container>
-				</div>
+					<SeasonFixturesComponent seasonsFixturesParam={fixtureData} editable={false} />
+				</Container>
 				:
 				<div> Loading</div>
 			}
-		</div>
+		</>
 	)
 
 }

@@ -5,7 +5,7 @@ const AdminHomePage = () => {
 
     return (<div>
         <div style={{
-            padding: 20
+            marginTop: 300
         }}>
             <Link style={{
                 padding: 20

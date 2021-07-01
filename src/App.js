@@ -25,23 +25,17 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <TopNav />
         <div>
+          <TopNav />
           <Route exact path="/" component={Home} />
-          <Route path="/officers"><Officers /></Route>
-          <Route path="/leagueselection"> <CompetitionHome /></Route>
+        </div>
+        <div>
           <Route path="/leagueandfixtures"> <LeagueAndFixturePage /></Route>
-          {friendlyFixtureGroups.map((fixtureGroup, index) => {
-            if (fixtureGroup.active) {
-              const path = "/friendlyfixtures/" + fixtureGroup.id
-              return <Route path={path}><FriendlyFixturesWrapper fixtureGroupIdProps={fixtureGroup.id} fixtureGroupNameProps={fixtureGroup.name} /></Route>
-            }
-          })}
+          <Route path="/friendlyfixtures"><FriendlyFixturesWrapper /></Route>
           <Route path="/admin"> <AdminHome /></Route>
           <Route path="/admin/createnewleague"> <CreateNewLeague /></Route>
           <Route path="/admin/updatefixture"> <UpdateFixture /></Route>
-          <Route path="/contactus"> <ContactUs /></Route>
-      </div>
+        </div>
       </div>
     </Router>
   );

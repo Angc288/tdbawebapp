@@ -1,6 +1,5 @@
 import { Link} from 'react-scroll';
 
-
 const offset = -140
 const minDuration = 500
 

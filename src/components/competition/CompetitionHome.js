@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
 import qs from 'query-string';
 import Select from 'react-select'
 import friendlyFixtureGroups from "../../data/friendlyFixtures_groups.json"
@@ -59,7 +58,7 @@ function CompetitionHome() {
         { value: 'TALBA', label: 'TALBA' }
     ]
 
-    return (<div id = "competitions">
+    return (<div id="competitions">
         <div style={{
             padding: 20
         }}>
@@ -90,11 +89,21 @@ function CompetitionHome() {
                 return linkObject
             })}></CompetitionDisplayPanel>
             <CompetitionDisplayPanel competionTypeParam='Friendly' linksParam={friendlyFixtureGroups.map((fixtureGroup, index) => {
+
+                console.log(fixtureGroup)
+
+                const newQueryParam = {
+                    fixtureGroupId: fixtureGroup.id,
+                    fixtureGroupName: fixtureGroup.name
+                }
+
+                const linkObject = { url: "/friendlyfixtures?" + qs.stringify(newQueryParam), name: fixtureGroup.name }
+
                 if (fixtureGroup.active) {
-                    return { url: "/friendlyfixtures/" + fixtureGroup.id, name: fixtureGroup.name }
+                    return  linkObject
                 }
             })}></CompetitionDisplayPanel>
-            <CompetitionDisplayPanel competionTypeParam='Knockout' linksParam={[]}/>
+            <CompetitionDisplayPanel competionTypeParam='Knockout' linksParam={[]} />
         </div>
     </div>
     );

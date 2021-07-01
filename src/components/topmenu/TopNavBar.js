@@ -8,28 +8,31 @@ import TopNavLink from "./TopNavLink";
 // This is now not a className but a function you can pass props as arguments
 function TopNavBar() {
 
-  const [barColour, setBarColour] = useState('transparent')
+  const [barColour, setBarColour] = useState('light')
+  const [activeOption, setActiveOption] = useState()
 
   const offset = -140
   const minDuration = 500
 
 
   const scrollToTop = () => {
-    setBarColour('transparent')
+    console.log('')
+    setBarColour('light')
     animateScroll.scrollToTop()
+    setActiveOption()
   }
 
 
   const handleSetActive = (link) => {
-
-    console.log(link)
     setBarColour('light')
+    setActiveOption(link)
+    console.log(link)
   }
 
   return (
     <>
-      <Navbar expand="sm" fixed="top" bg={barColour} variant="dark">
-        <Navbar.Brand onClick={scrollToTop}><TopNavBrand></TopNavBrand></Navbar.Brand>
+      <Navbar expand="sm" fixed="top" bg={barColour} variant="light">
+        <Navbar.Brand onClick={scrollToTop}><TopNavBrand/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>

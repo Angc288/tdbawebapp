@@ -6,6 +6,7 @@ import ContactUs from './ContactUs';
 import LatestNews from './LatestNews';
 import OfficersHome from '../officers/OfficerHome';
 import HomepageContentHolder from './HomepageContentHolder';
+import Footer from './Footer';
 
 
 function Home() {
@@ -19,6 +20,7 @@ function Home() {
 			<HomepageContentHolder component={<CompetitionHome />} header='Competitions'/>
 			<HomepageContentHolder component={<OfficersHome />} header='Officers'/>
 			<HomepageContentHolder component={<ContactUs />} header='Contact Us'/>
+			<Footer/>
 		</div>
 	);
 
