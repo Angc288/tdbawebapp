@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Slider from "react-slick";
 import Slide from './Slide'
-import image1 from "../../../img/slider1.jpeg"
+import image1 from "../../../img/slider1.png"
 import image2 from "../../../img/slider2.jpeg"
 import image3 from "../../../img/slider3.jpeg"
 import image4 from "../../../img/slider4.jpeg"
