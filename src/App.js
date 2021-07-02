@@ -1,14 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import Home from './components/pages/Home';
-
-
 import LeagueAndFixturePage from './components/competition/league/LeagueAndFixturePage';
 import FriendlyFixturesWrapper from './components/competition/friendly/FriendlyFixturesWrapper'
-
-
 import './App.css';
 import AdminHome from './components/admin/AdminHomePage';
 import CreateNewLeague from './components/admin/newleague/CreateNewLeague';
