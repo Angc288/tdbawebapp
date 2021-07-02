@@ -48,8 +48,8 @@ const LeagueAndFixturePage = () => {
 
 	return (
 		<>
-			<div style = {{paddingTop: 100}}>
-				<button onClick={() => history.goBack()}>Back</button>  
+			<div style={{ paddingTop: 100 }}>
+				<button onClick={() => history.goBack()}>Back</button>
 				<h2>{leagueName}</h2>
 			</div>
 			{leagueData && fixtureData ?

@@ -3,6 +3,7 @@ import AdminRound from './AdminRound';
 import teams from "../../../data/teams.json"
 import womensTeams from "../../../data/womensTeams.json"
 import Select from 'react-select'
+import { Container } from 'react-bootstrap';
 
 const CreateNewLeague = () => {
 
@@ -140,11 +141,11 @@ const CreateNewLeague = () => {
     ]
 
     return (
-        <div>
+        <Container>
             <div>
                 <div style={{
-                        width: 120
-                    }}>
+                    width: 120
+                }}>
                     <label style={{ padding: 10 }}>
                         Organisation:</label>
                     <Select options={organisationSelectOptions} onChange={handleOrganisationChange} name={organisation} style={{ padding: 20, width: 175 }} />
@@ -180,7 +181,7 @@ const CreateNewLeague = () => {
                 {[...Array(numberOfRounds)].map((e, i) => <AdminRound callback={roundChanged} roundId={i} teamNames={teamNames} numberOfFixturesPerRound={numberOfFixturesPerRound} />)
                 }
             </div>
-        </div>
+        </Container>
     )
 
 }

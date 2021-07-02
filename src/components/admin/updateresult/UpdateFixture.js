@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Container } from 'react-bootstrap';
 
 
 import SeasonFixturesComponent from '../../competition/league/fixtures/SeasonFixturesComponent';
@@ -47,7 +48,7 @@ const UpdateFixture = () => {
     }
 
     return (
-        <div>
+        <Container>
             <div style={{
                 borderWidth: borderWidth,
                 borderColor: 'blue',
@@ -64,13 +65,13 @@ const UpdateFixture = () => {
                 {
                     fixtureData ?
                         <div>
-                            <SeasonFixturesComponent seasonsFixturesParam={fixtureData} editable={true}/>
+                            <SeasonFixturesComponent seasonsFixturesParam={fixtureData} editable={true} />
                         </div >
                         :
                         <div> Loading</div>
                 }
             </div>
-        </div>
+        </Container>
     );
 }
 

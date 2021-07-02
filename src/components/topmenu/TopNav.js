@@ -2,10 +2,10 @@ import React from 'react';
 import TopNavBar from "./TopNavBar"
 
 
-function TopNav({ fixtureGroups }) {
+function TopNav({ place }) {
 	return (
 		<header>
-			<TopNavBar fixtureGroups={fixtureGroups} />
+			<TopNavBar place={place} />
 		</header>
 	);
 

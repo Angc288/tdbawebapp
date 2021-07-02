@@ -6,7 +6,6 @@ import ContactUs from './ContactUs';
 import LatestNews from './LatestNews';
 import OfficersHome from '../officers/OfficerHome';
 import HomepageContentHolder from './HomepageContentHolder';
-import Footer from './Footer';
 
 
 function Home() {
@@ -14,13 +13,12 @@ function Home() {
 
 	return (
 		<div>
-			<SlickSlider id="img-carousel"/>
-			<HomepageContentHolder component={<About />} header='About Us'/>
-			<HomepageContentHolder component={<LatestNews />} header='Latest News and Events'/>
-			<HomepageContentHolder component={<CompetitionHome />} header='Competitions'/>
-			<HomepageContentHolder component={<OfficersHome />} header='Officers'/>
-			<HomepageContentHolder component={<ContactUs />} header='Contact Us'/>
-			<Footer/>
+			<SlickSlider id="img-carousel" />
+			<HomepageContentHolder component={<About />} header='About Us' />
+			<HomepageContentHolder component={<LatestNews />} header='Latest News and Events' />
+			<HomepageContentHolder component={<CompetitionHome />} header='Competitions' />
+			<HomepageContentHolder component={<OfficersHome />} header='Officers' />
+			<HomepageContentHolder component={<ContactUs />} header='Contact Us' />
 		</div>
 	);
 
