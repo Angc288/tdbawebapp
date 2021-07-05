@@ -8,7 +8,7 @@ function CompetitionHome() {
 
     const [selectedSeason, setSelectedSeason] = useState("Current")
     const [selectedOrganisation, setSelectedOrganisation] = useState("All")
-    const [leagueLinks, setLeagueLinks] = useState([])
+    const [leagueLinks, setLeagueLinks] = useState({})
 
     const handleSeasonChange = (event) => {
         setSelectedSeason(event.value)
@@ -37,7 +37,7 @@ function CompetitionHome() {
                 setLeagueLinks(data)
             })
             .catch(error => {
-                setLeagueLinks([])
+                setLeagueLinks({})
             });
 
     }
@@ -100,7 +100,7 @@ function CompetitionHome() {
                 const linkObject = { url: "/friendlyfixtures?" + qs.stringify(newQueryParam), name: fixtureGroup.name }
 
                 if (fixtureGroup.active) {
-                    return  linkObject
+                    return linkObject
                 }
             })}></CompetitionDisplayPanel>
             <CompetitionDisplayPanel competionTypeParam='Knockout' linksParam={[]} />
